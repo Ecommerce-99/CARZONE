@@ -1,13 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from '../Images/logo.png';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
+import PersonIcon from '@mui/icons-material/Person';
+
+
 
 function Nav() {
   return (
-    <nav class="navbar navbar-expand-lg bg-white fixed-top" id="nav-color">
+    <nav class="navbar navbar-expand-lg bg-white" id="nav-color">
       <div class="container-fluid">
-        {/* <Link to="/" class="navbar-brand">
+        <Link to="/" class="navbar-brand">
           <img src={logo} alt="logo" width={150} />
-        </Link> */}
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -31,17 +36,17 @@ function Nav() {
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/Products" class="nav-link fw-bold text-dark">
+              <Link to="Galary" class="nav-link fw-bold text-dark">
                 GALARY
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/about" class="nav-link fw-bold text-dark">
+              <Link to="About" class="nav-link fw-bold text-dark">
                 ABOUT
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/contact" class="nav-link fw-bold text-dark">
+              <Link to="Contact" class="nav-link fw-bold text-dark">
                 CONTACT US
               </Link>
             </li>
@@ -50,15 +55,15 @@ function Nav() {
             <p className="d-flex align-items-end fw-bold fs-5 text-dark">
               $0.00
             </p>
-            {/* <Link
-              to="/cart"
+            <Link
+              to="Cart"
               className="btn text-dark me-1 fw-bold text-primary"
             >
               <LocalMallIcon color="primary" fontSize="large" />0
             </Link>
-            <Link to="registration" class="btn btn-white fw-bold" type="submit">
+            <Link to="Registration" class="btn btn-white fw-bold" type="submit">
               <PersonIcon fontSize="large" VerticalAlignCenter />{" "}
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>
