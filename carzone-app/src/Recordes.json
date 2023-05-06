@@ -1,7 +1,7 @@
 {
   "toyota": [
     {
-      "id": 1,
+      "id":1,
       "type": "Toyota crown",
       "image1": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/5.png?fm=webp&&w=768&h=328&q=90",
       "image2": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/16.png?fm=webp&&w=768&h=328&q=90",
@@ -13,19 +13,19 @@
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
-      "id": 2,
+      "id":2,
       "type": "Toyota Prius",
       "image1": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
-      "image2": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/14.png?fm=webp&&w=768&h=328&q=90",
-      "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/19.png?fm=webp&&w=768&h=328&q=90",
-      "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/24.png?fm=webp&&w=768&h=328&q=90",
+      "image2": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
+      "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
+      "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
       "rate": 4,
       "price": "$45.00",
       "discountedPrice": "$40.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
-      "id": 3,
+      "id":3,
       "type": "Toyota Camry",
       "image1": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/2.png?fm=webp&&w=768&h=328&q=90",
       "image2": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/4.png?fm=webp&&w=768&h=328&q=90",
@@ -39,7 +39,7 @@
   ],
   "hyundai": [
     {
-      "id": 4,
+      "id":4,
       "type": "Hyundai Elantra",
       "image1": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_6.png",
       "image2": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_30.png",
@@ -51,7 +51,7 @@
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
-      "id": 5,
+      "id":5,
       "type": "Hyundai Sonata",
       "image1": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_5.png",
       "image2": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_31.png",
@@ -63,7 +63,7 @@
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
-      "id": 6,
+      "id":6,
       "type": "Hyundai Sonata",
       "image1": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_7.png",
       "image2": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_3.png",
@@ -77,36 +77,36 @@
   ],
   "bmw": [
     {
-      "id": 7,
-      "type": "BMW X7 ALPINA XB7",
-      "image1": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/d402-110008051/5UX43EM11P9R99483/6aea436d1b994b368e531b10d63ac20f.jpg",
-      "image2": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/7e25-110008051/5UX43EM11P9R99483/2a3f762cbf5aa0684a8e5a0a6a3590a6.jpg",
-      "image3": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/befd-110008051/5UX43EM11P9R99483/14cc4a7f9bff53f727ab7f354a1f0908.jpg",
-      "image4": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/763d-110008051/5UX43EM11P9R99483/4eb19355f4ad1e3a2452ea59ceb6e473.jpg",
+      "id":7,
+      "type": "BMW 840i",
+      "image1": "./Images/White-bmw-coupe-1.png",
+      "image2": "./Images/White-bmw-coupe-2.png",
+      "image3": "./Images/White-bmw-coupe-3.png",
+      "image4": "./Images/White-bmw-coupe-4.png",
       "rate": 4,
       "price": "$45.00",
       "discountedPrice": "$40.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
-      "id": 8,
-      "type": "BMW 330i",
-      "image1": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/12e3-110008051/3MW89FF03P8D04746/0221ae8ee02a71f7303863706591039d.jpg",
-      "image2": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/4fb1-110008051/3MW89FF03P8D04746/55fee1594d8a4f16584cba165f91e1e4.jpg",
-      "image3": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/6c7b-110008051/3MW89FF03P8D04746/b7f04e3f13a6b30347622613163519f6.jpg",
-      "image4": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/1dd5-110008051/3MW89FF03P8D04746/e68cb591a2bb5fc800733613b663da4a.jpg",
+      "id":8,
+      "type": "BMW X-7",
+      "image1": "./Images/White-bmw X7-1.png",
+      "image2": "./Images/White-bmw X7-2.png",
+      "image3": "./Images/White-bmw X7-3.png",
+      "image4": "./Images/White-bmw X7-4.png",
       "rate": 4,
       "price": "$45.00",
       "discountedPrice": "$40.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
-      "id": 9,
-      "type": "BMW Z4 sDrive30i",
-      "image1": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/9527-110008051/WBAHF3C00PWY17195/65f53cce0b88e908a1d8a2ee2dd34688.jpg",
-      "image2": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/a6a9-110008051/WBAHF3C00PWY17195/29f786b5ab215a529a3d5e3e597dea8f.jpg",
-      "image3": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/253c-110008051/WBAHF3C00PWY17195/1d45074521220562353c7cc38094be29.jpg",
-      "image4": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/1863-110008051/WBAHF3C00PWY17195/2e3d9a26ec7eaca4144aa4f25f1940e2.jpg",
+      "id":9,
+      "type": "BMW i7",
+      "image1": "./Images/White-bmw i7-1.png",
+      "image2": "./Images/White-bmw i7-2.png",
+      "image3": "./Images/White-bmw i7-3.png",
+      "image4": "./Images/White-bmw i7-4.png",
       "rate": 4,
       "price": "$45.00",
       "discountedPrice": "$40.00",
