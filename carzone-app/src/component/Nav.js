@@ -52,9 +52,7 @@ function Nav() {
             </li>
           </ul>
           <div class="d-flex">
-            <p className="d-flex align-items-end fw-bold fs-5 text-dark">
-              $0.00
-            </p>
+           
             <Link
               to="Cart"
               className="btn text-dark me-1 fw-bold text-primary"
