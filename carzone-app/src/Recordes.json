@@ -1,0 +1,116 @@
+{
+  "toyota": [
+    {
+      "id":1,
+      "type": "Toyota crown",
+      "image1": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/5.png?fm=webp&&w=768&h=328&q=90",
+      "image2": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/16.png?fm=webp&&w=768&h=328&q=90",
+      "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/19.png?fm=webp&&w=768&h=328&q=90",
+      "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/23.png?fm=webp&&w=768&h=328&q=90",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    },
+    {
+      "id":2,
+      "type": "Toyota Prius",
+      "image1": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
+      "image2": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
+      "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
+      "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/5.png?fm=webp&&w=768&h=328&q=90",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    },
+    {
+      "id":3,
+      "type": "Toyota Camry",
+      "image1": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/2.png?fm=webp&&w=768&h=328&q=90",
+      "image2": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/4.png?fm=webp&&w=768&h=328&q=90",
+      "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/3.png?fm=webp&&w=768&h=328&q=90",
+      "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/1.png?fm=webp&&w=768&h=328&q=90",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    }
+  ],
+  "hyundai": [
+    {
+      "id":4,
+      "type": "Hyundai Elantra",
+      "image1": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_6.png",
+      "image2": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_30.png",
+      "image3": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_27.png",
+      "image4": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_21.png",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    },
+    {
+      "id":5,
+      "type": "Hyundai Sonata",
+      "image1": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_5.png",
+      "image2": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_31.png",
+      "image3": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_27.png",
+      "image4": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_21.png",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    },
+    {
+      "id":6,
+      "type": "Hyundai Sonata",
+      "image1": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_7.png",
+      "image2": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_3.png",
+      "image3": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_27.png",
+      "image4": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_21.png",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    }
+  ],
+  "bmw": [
+    {
+      "id":7,
+      "type": "BMW 840i",
+      "image1": "./Images/White-bmw-coupe-1.png",
+      "image2": "./Images/White-bmw-coupe-2.png",
+      "image3": "./Images/White-bmw-coupe-3.png",
+      "image4": "./Images/White-bmw-coupe-4.png",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    },
+    {
+      "id":8,
+      "type": "BMW X-7",
+      "image1": "./Images/White-bmw X7-1.png",
+      "image2": "./Images/White-bmw X7-2.png",
+      "image3": "./Images/White-bmw X7-3.png",
+      "image4": "./Images/White-bmw X7-4.png",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    },
+    {
+      "id":9,
+      "type": "BMW i7",
+      "image1": "./Images/White-bmw i7-1.png",
+      "image2": "./Images/White-bmw i7-2.png",
+      "image3": "./Images/White-bmw i7-3.png",
+      "image4": "./Images/White-bmw i7-4.png",
+      "rate": 4,
+      "price": "$45.00",
+      "discountedPrice": "$40.00",
+      "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
+    }
+  ]
+}
