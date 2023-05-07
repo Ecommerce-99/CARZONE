@@ -41,8 +41,6 @@ function App() {
   }, [cartItems]);
 
   const [brand, setBrand] = useState("toyota");
-   
-
 
   return (
     <>
@@ -53,7 +51,7 @@ function App() {
       <Nav/>
         <Routes>
           <Route index element={<Main setBrand={setBrand} />} />
-          <Route path="Products" index element={<Products brand={brand}/>} />
+          <Route path="Products" index element={<Products brand={brand} />} />
           <Route path="Gallery" index element={<Gallery />} />
           <Route path="Registration" index element={<Registration />} />
           <Route path="Cart" index element={<Cart />} />
