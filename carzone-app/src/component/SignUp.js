@@ -17,12 +17,14 @@ const SignUp = () => {
   const [Tel, SetTel] = useState("");
   const [ErrorMsg, SetErrorMsg] = useState("");
 
-  const clientId="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
+ 
   useEffect(() => {
+    
     gapi.load("client:auth2",()=>{
-        gapi.auth2.init({clientId:clientId})
+      gapi.auth2.getAuthInstance({client_id:client_id})
     },[])
   })
+  const client_id="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
   const [showLoginButton, setShowLoginButton] = useState(true);
   const [showLogoutButton, setShowLogoutButton] = useState(false);
 
@@ -193,7 +195,7 @@ const SignUp = () => {
               <div className="d-flex justify-content-center">
                 {showLoginButton ?
                 <GoogleLogin
-                  clientId="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
+                  client_id="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
                   buttonText="Login with google"
                   onSuccess={onLoginSuccess}
                   onFailure={onFailureSuccess}
@@ -201,7 +203,7 @@ const SignUp = () => {
                 /> : null }
                 {showLogoutButton ?
                 <GoogleLogout
-                  clientId="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
+                  client_id="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
                   buttonText="Logout"
                   onLogoutSuccess={onSignoutSuccess}
                 ></GoogleLogout> : null }
