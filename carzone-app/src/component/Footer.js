@@ -9,7 +9,7 @@ const Footer = () => {
     <>
 <>
   {/* Footer */}
-  <footer className="text-center text-lg-start text-muted shadow-lg ">
+  <footer className="text-center text-lg-start text-muted shadow-lg" >
     {/* Section: Social media */}
     <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       {/* Left */}
@@ -43,7 +43,7 @@ const Footer = () => {
     {/* Section: Social media */}
     {/* Section: Links  */}
     <section className="">
-      <div className="container text-center text-md-start mt-5">
+      <div className=" text-center text-md-start mt-5">
         {/* Grid row */}
         <div className="row mt-3">
           {/* Grid column */}

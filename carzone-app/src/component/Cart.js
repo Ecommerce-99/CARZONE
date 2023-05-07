@@ -80,7 +80,15 @@ function Cart()
         </div>
       ))}
     </div>
-   
+    {cartItems.length > 0 && (
+      <div className="mt-5 text-start">
+        <p className="fw-bold mb-2">Subtotal: {totalPrice} JD</p>
+        <hr/>
+        <p className="fw-bold mt-2 mb-2">Charge: 100 JD</p>
+        <hr/>
+        <p className="fw-bold mt-2">Total: {(Number(totalPrice) + 100).toFixed(2)} JD</p>
+      </div>
+    )}
    
   </div>
   {cartItems.length > 0 && isLoggedIn && (
