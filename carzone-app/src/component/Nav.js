@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from '../Images/logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import PersonIcon from '@mui/icons-material/Person';
+import { HashLink } from 'react-router-hash-link';
 
 
 
@@ -36,9 +37,9 @@ function Nav() {
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="Gallery" class="nav-link fw-bold text-dark">
+              <HashLink smooth to="/#Gallery" class="nav-link fw-bold text-dark">
               GALLERY
-              </Link>
+              </HashLink>
             </li>
             <li class="nav-item">
               <Link to="About" class="nav-link fw-bold text-dark">
