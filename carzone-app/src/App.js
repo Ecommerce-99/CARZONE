@@ -13,7 +13,7 @@ import Contact from "./component/Contact";
 import React, { useState, createContext, useEffect } from 'react';
 import Payment from "./component/Payment";
 import HeroCart from './component/heroCart';
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 export const CartContext = createContext([]);
 
 
