@@ -61,7 +61,7 @@ function Cart()
     <div className="container mt-5">
     <div className="row">
       <div className="col-12">
-        <h4 className="text-center mb-5 fw-bold">{cartItems.length === 0 ? "Your cart is empty" : "Your cart"}</h4>
+        <h4 className="text-center mb-5 fw-bold fs-1">{cartItems.length === 0 ? "Your cart is empty" : "YOUR CART"}</h4>
       </div>
       {cartItems.map((item) => (
         <div key={item.id} className="col-md-6 col-lg-4 mb-4">
@@ -82,7 +82,7 @@ function Cart()
     </div>
     {cartItems.length > 0 && (
       <div className="mt-5 text-start">
-        <p className="fw-bold mb-2">Subtotal: {totalPrice} JD</p>
+        <p className="fw-bold mb-2">Sub-Total: {totalPrice} JD</p>
         <hr/>
         <p className="fw-bold mt-2 mb-2">Charge: 100 JD</p>
         <hr/>
@@ -93,7 +93,7 @@ function Cart()
   </div>
   {cartItems.length > 0 && isLoggedIn && (
       <div>
-        <h5 className="mt-4 fw-bold text-center">Payment information goes here</h5>
+        <h5 className="mt-4 fw-bold text-center fs-1">Payment Information</h5>
         <Payment />
       </div>
     )}

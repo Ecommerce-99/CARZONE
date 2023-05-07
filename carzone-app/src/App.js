@@ -15,6 +15,7 @@ import Payment from "./component/Payment";
 import HeroCart from "./component/heroCart";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrandProvider } from "./component/brandContext";
+import {AuthContextProvider} from "./component/AuthContext";
 
 export const CartContext = createContext([]);
 
@@ -39,11 +40,11 @@ function App() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // const [brand, setBrand] = useState();
 
   return (
     <>
       <BrowserRouter>
+      <AuthContextProvider>
         <CartContext.Provider value={[cartItems, setCartItems]}>
           <BrandProvider>
             <Nav />
@@ -60,6 +61,7 @@ function App() {
             <Footer />
           </BrandProvider>
         </CartContext.Provider>
+        </AuthContextProvider>
       </BrowserRouter>
     </>
   );

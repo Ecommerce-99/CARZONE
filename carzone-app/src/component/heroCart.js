@@ -7,9 +7,9 @@ function HeroCart() {
         <div class="seoLanding deliveryLanding redesign">
             <header class="banner">
                 <hgroup class="bannerMessaging">
-                    <h1>Your dream car, delivered</h1>
+                    <h1>Your Dream Car, Delivered!</h1>
                     <p class="heroSubheader header3">Any listing with a    
-                    is eligible for CARZONE You can find the best cars and delivery and can be shipped directly to you
+                    is eligible for <span className='fw-bold'>LUXURY CARS</span> You can find the best cars and delivery and can be shipped directly to you
                    </p>
                 </hgroup>
                 <div class="headerImgWrap">
