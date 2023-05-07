@@ -10,17 +10,277 @@ function Products({ brand }) {
   const BMW = cars.bmw;
 
   // const [carBrand, setCarBrand] = useState(brand);
-    const [carBrand, setcarBrand] = useContext(BrandContext);
+    const [carBrand, setCarBrand] = useContext(BrandContext);
+    console.log(carBrand);
 
   let cart = [];
 
   const addCart = (car) => {
-    cart.push(car);
-    localStorage.setItem("Cart", JSON.stringify(cart));
+   
+    console.log(car)
   };
 
   return (
     <>
+ {carBrand === "all" ? (
+        <>
+          <div>
+            <div
+              className="bigCon p-5 text-center bg-image rounded-3"
+              style={{
+                backgroundImage: `url(https://dealerimages.dealereprocess.com/image/upload/2378751)`,
+              }}>
+              <div className="mask">
+                <div className="position-relative d-flex justify-content-center align-items-center h-100">
+                  <div className="text-white">
+                    <h1 className="mb-3">LUXURY CARS GALLERY</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <h1 className="my-5 display-3 fw-bold text-center">TOYOTA CARS</h1>
+
+          {toyota.map((car) => {
+            return (
+              <section className="py-2" key={car.id}>
+                <div className="container px-4 px-lg-5 my-5">
+                  <div className="row gx-4 gx-lg-5 align-items-center">
+                    <div className="col-md-6">
+                      <div className="row-3">
+                        <img
+                          className="card-img-top mb-md-0"
+                          src={car.image1}
+                          alt="..."
+                        />
+                      </div>
+                      <div className="container d-flex">
+                        <div className="col-sm-4 mt-5 ">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image2}
+                            alt="..."
+                          />
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image3}
+                            alt="..."
+                          />
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image4}
+                            alt="..."
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="small mb-1">SKU: BST-498</div>
+                      <h1 className="display-5 fw-bolder">{car.type} </h1>
+                      <div className="fs-5 mb-5">
+                        <span className="text-decoration-line-through">
+                          $45.00
+                        </span>
+                        <span>$40.00</span>
+                      </div>
+                      <p>
+                        With a low center of gravity, it's designed to perform.
+                        Feel its nimble handling in every turn and stability
+                        during acceleration and braking—for a drive that’s
+                        all-around confident.
+                      </p>
+                      <div className="d-flex">
+                        <button
+                          className="btn btn-outline-dark flex-shrink-0"
+                          type="button"
+                          fdprocessedid="qzga4"
+                          onClick={() => {
+                            cart.push(car);
+                            localStorage.setItem("Cart", JSON.stringify(cart));
+                          }}
+                        >
+                          <i className="bi-cart-fill me-1" />
+                          Add to cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+
+<h1 className="my-5 display-3 fw-bold text-center">HYUNDAI CARS</h1>
+
+{hyundai.map((car) => {
+            return (
+              <section className="py-2" key={car.id}>
+                <div className="container px-4 px-lg-5 my-5">
+                  <div className="row gx-4 gx-lg-5 align-items-center">
+                    <div className="col-md-6">
+                      <div className="row-3">
+                        <img
+                          className="card-img-top mb-md-0"
+                          src={car.image1}
+                          alt="..."
+                        />
+                      </div>
+                      <div className="container d-flex">
+                        <div className="col-sm-4 mt-5 ">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image2}
+                            alt="..."
+                          />
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image3}
+                            alt="..."
+                          />
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image4}
+                            alt="..."
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="small mb-1">SKU: BST-498</div>
+                      <h1 className="display-5 fw-bolder">{car.type} </h1>
+                      <div className="fs-5 mb-5">
+                        <span className="text-decoration-line-through">
+                          $45.00
+                        </span>
+                        <span>$40.00</span>
+                      </div>
+                      <p>
+                        With a low center of gravity, it's designed to perform.
+                        Feel its nimble handling in every turn and stability
+                        during acceleration and braking—for a drive that’s
+                        all-around confident.
+                      </p>
+                      <div className="d-flex">
+                        <button
+                          className="btn btn-outline-dark flex-shrink-0"
+                          type="button"
+                          fdprocessedid="qzga4"
+                          onClick={() => {
+                            cart.push(car);
+                            localStorage.setItem("Cart", JSON.stringify(cart));
+                          }}
+                        >
+                          <i className="bi-cart-fill me-1" />
+                          Add to cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+
+<h1 className="my-5 display-3 fw-bold text-center">BMW CARS</h1>
+{BMW.map((car) => {
+            return (
+              <section className="py-2" key={car.id}>
+                <div className="container px-4 px-lg-5 my-5">
+                  <div className="row gx-4 gx-lg-5 align-items-center">
+                    <div className="col-md-6">
+                      <div className="row-3">
+                        <img
+                          className="card-img-top mb-md-0"
+                          src={car.image1}
+                          alt="..."
+                        />
+                      </div>
+                      <div className="container d-flex">
+                        <div className="col-sm-4 mt-5 ">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image2}
+                            alt="..."
+                          />
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image3}
+                            alt="..."
+                          />
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <img
+                            className="card-img-top mb-5 mb-md-0"
+                            src={car.image4}
+                            alt="..."
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="small mb-1">SKU: BST-498</div>
+                      <h1 className="display-5 fw-bolder">{car.type} </h1>
+                      <div className="fs-5 mb-5">
+                        <span className="text-decoration-line-through">
+                          $45.00
+                        </span>
+                        <span>$40.00</span>
+                      </div>
+                      <p>
+                        With a low center of gravity, it's designed to perform.
+                        Feel its nimble handling in every turn and stability
+                        during acceleration and braking—for a drive that’s
+                        all-around confident.
+                      </p>
+                      <div className="d-flex">
+                        <button
+                          className="btn btn-outline-dark flex-shrink-0"
+                          type="button"
+                          fdprocessedid="qzga4"
+                          onClick={() => {
+                            cart.push(car);
+                            localStorage.setItem("Cart", JSON.stringify(cart));
+                          }}
+                        >
+                          <i className="bi-cart-fill me-1" />
+                          Add to cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+
+
+        </>
+      ) : (
+        <></>
+      )}
+
+
+
+
+
+
+
+
+
+
+
       {carBrand === "toyota" ? (
         <>
           <div>
@@ -42,7 +302,7 @@ function Products({ brand }) {
 
           {toyota.map((car) => {
             return (
-              <section className="py-2">
+              <section className="py-2" key={car.id}>
                 <div className="container px-4 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
@@ -97,6 +357,10 @@ function Products({ brand }) {
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
+                          onClick={() => {
+                            cart.push(car);
+                            localStorage.setItem("Cart", JSON.stringify(cart));
+                          }}
                         >
                           <i className="bi-cart-fill me-1" />
                           Add to cart
@@ -116,7 +380,7 @@ function Products({ brand }) {
       {carBrand === "hyundai" ? (
         <>
           <div>
-            <div
+            <div 
               className="bigCon p-5 text-center bg-image rounded-3"
               style={{
                 backgroundImage: `url(https://www.hdcarwallpapers.com/walls/hyundai_vision_t_concept_2019_4k_6-HD.jpg)`,
@@ -134,7 +398,7 @@ function Products({ brand }) {
 
           {hyundai.map((car) => {
             return (
-              <section className="py-2">
+              <section className="py-2" key={car.id}>
                 <div className="container px-4 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
@@ -189,6 +453,10 @@ function Products({ brand }) {
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
+                          onClick={() => {
+                            cart.push(car);
+                            localStorage.setItem("Cart", JSON.stringify(cart));
+                          }}
                         >
                           <i className="bi-cart-fill me-1" />
                           Add to cart
@@ -200,6 +468,11 @@ function Products({ brand }) {
               </section>
             );
           })}
+
+
+
+
+          
         </>
       ) : (
         <></>
@@ -226,7 +499,7 @@ function Products({ brand }) {
 
           {BMW.map((car) => {
             return (
-              <section className="py-2">
+              <section className="py-2" key={car.id}>
                 <div className="container px-4 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
@@ -281,6 +554,10 @@ function Products({ brand }) {
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
+                          onClick={() => {
+                            cart.push(car);
+                            localStorage.setItem("Cart", JSON.stringify(cart));
+                          }}
                         >
                           <i className="bi-cart-fill me-1" />
                           Add to cart

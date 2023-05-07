@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PersonIcon from "@mui/icons-material/Person";
 import { HashLink } from "react-router-hash-link";
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import "./home.css";
+import { AuthContext } from "./AuthContext";
 
 function Nav() {
+  const { auth , setAuth} = useContext(AuthContext)
+
   return (
     <nav className="navbar navbar-expand-lg bg-white p-0" id="nav-color">
       <div className="container-fluid">
@@ -32,9 +36,9 @@ function Nav() {
               </Link>
             </li>
             <li className="nav-item">
-              <HashLink smooth to="/#Gallery" className="nav-link  text-dark">
+              <Link smooth to="/Products" className="nav-link  text-dark">
                 GALLERY
-              </HashLink>
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="About" className="nav-link  text-dark">
@@ -54,9 +58,18 @@ function Nav() {
             >
               <LocalMallIcon color="black" fontSize="large" />
             </Link>
-            <Link to="Registration" class="btn btn-white " type="submit">
-              <PersonIcon fontSize="large" VerticalAlignCenter />{" "}
+           {
+            auth ?  <Link to="Registration" class="btn btn-white " type="submit">
+            <PersonIcon fontSize="large" VerticalAlignCenter />{" "}
+          </Link> :  
+            <>
+            <Link to="/" onClick={() => setAuth(true)} class="btn btn-white " type="submit">
+              <ExitToAppIcon fontSize="large" VerticalAlignCenter />{" "}
             </Link>
+            
+          </>
+        
+           }
           </div>
         </div>
       </div>

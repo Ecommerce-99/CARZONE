@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import "../App.css";
 import backgroundImage from "../Images/SignUp.png";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import {gapi} from 'gapi-script';
+import { AuthContext } from "./AuthContext";
 
 
 
 const SignUp = () => {
+  const navigate = useNavigate('/');
+  const { auth, setAuth } = useContext(AuthContext);
+  console.log(auth);
+
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
   const [ConfirmPassword, SetConfirmPassword] = useState("");
@@ -85,7 +90,8 @@ const SignUp = () => {
     users.push(userData);
     localStorage.setItem("users", JSON.stringify(users));
     console.log(userData);
-
+    setAuth(true);
+    navigate('/')
     SetEmail("");
     SetUserName("");
     SetTel("");

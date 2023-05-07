@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import "../App.css";
 import backgroundImage from "../Images/SignInBG.png";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { AuthContext } from "./AuthContext";
 
 
 
 
 const Registration = () => {
+  const navigate = useNavigate('/')
+  const { Auth, setAuth } = useContext(AuthContext)
+
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [ErrorMsg, setErrorMsg] = useState("");
@@ -45,6 +49,8 @@ const Registration = () => {
     );
     if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
+      navigate('/');
+      setAuth(true);
       setErrorMsg("");
       setEmail("");
       setPassword("");
