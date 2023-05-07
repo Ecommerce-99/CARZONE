@@ -142,9 +142,7 @@ const Footer = () => {
           <div
             className="text-center p-4 "
             style={{ backgroundColor: "#EEEEEE" }}
-          >
-            © 2023 Copyright: CAR ZONE
-          </div>
+          ></div>
           {/* Copyright */}
         </footer>
         {/* Footer */}
