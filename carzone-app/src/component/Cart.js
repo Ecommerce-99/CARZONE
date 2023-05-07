@@ -93,7 +93,7 @@ function Cart()
   </div>
   {cartItems.length > 0 && isLoggedIn && (
       <div>
-        <h5 className="mt-4 fw-bold text-center fs-1">Payment Information</h5>
+        <h5 className="mt-4 fw-bold text-center text-white fs-1">Payment Information</h5>
         <Payment />
       </div>
     )}

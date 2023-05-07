@@ -7,6 +7,8 @@ import { HashLink } from "react-router-hash-link";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import "./home.css";
 import { AuthContext } from "./AuthContext";
+import Swal from "sweetalert2";
+
 
 function Nav() {
   const { auth , setAuth} = useContext(AuthContext)
@@ -59,15 +61,23 @@ function Nav() {
               <LocalMallIcon color="black" fontSize="large" />
             </Link>
            {
-            auth ?  <Link to="Registration" class="btn btn-white " type="submit">
-            <PersonIcon fontSize="large" VerticalAlignCenter />{" "}
-          </Link> :  
-            <>
-            <Link to="/" onClick={() => setAuth(true)} class="btn btn-white " type="submit">
-              <ExitToAppIcon fontSize="large" VerticalAlignCenter />{" "}
+            auth ?      <>
+            <Link to="/" onClick={() => { setAuth(false);
+                Swal.fire({
+                  title: '<strong>You have successfully been logged out</strong>',
+                  text: 'Thank You!',
+               })
+               
+               }
+               } class="btn btn-white " type="submit">
+              <ExitToAppIcon fontSize="large" VerticalAlignCenter />       
             </Link>
-            
-          </>
+              </>
+             
+             :  
+             <Link to="Registration"  class="btn btn-white " type="submit">
+             <PersonIcon fontSize="large" VerticalAlignCenter />
+           </Link> 
         
            }
           </div>

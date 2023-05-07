@@ -1,4 +1,5 @@
 import React from 'react'
+import Swal from 'sweetalert2'
 
 
 
@@ -13,34 +14,45 @@ const Contact = () => {
       email: email.value,
       message: message.value,
     }
-    console.log(conFom)
+    console.log(conFom);
+
+    name.value = "";
+    email.value = "";
+    message.value = "";
+    setFormStatus('Send')
+
+Swal.fire({
+  title: '<strong>Your message has been sent successfully</strong>',
+  text: 'Thank You!',
+  icon: 'success'
+})
   }
   return (
-    <div className="container my-5">
-      <h2 className="mb-3 fw-bold">Contact Us</h2>
-      <p class="text-start w-responsive fw-bold">Do you have any questions?</p>
-      <p class="text-start w-responsive fw-bold mb-5">Please do not hesitate to contact us directly. Our team will come back to you within
+    <div className="container my-5 shadow-lg">
+      <h2 className="mb-3 fw-bold fs-1 text-center">CONTACT US</h2>
+      <p class="text-start w-responsive fw-bold fs-3">Do you have any questions?</p>
+      <p class="text-start w-responsive fw-bold mb-5 fs-6">Please do not hesitate to contact us directly. Our team will come back to you within
         a matter of hours to help you.</p>
       <form onSubmit={onSubmit}>
         <div className="mb-3">
-          <label className="form-label" htmlFor="name">
+          <label className="form-label fw-bold" htmlFor="name">
             Name
           </label>
           <input className="form-control" type="text" id="name" required />
         </div>
         <div className="mb-3">
-          <label className="form-label" htmlFor="email">
+          <label className="form-label fw-bold" htmlFor="email">
             Email
           </label>
           <input className="form-control" type="email" id="email" required />
         </div>
         <div className="mb-3">
-          <label className="form-label" htmlFor="message">
+          <label className="form-label fw-bold" htmlFor="message">
             Message
           </label>
           <textarea className="form-control" id="message" required />
         </div>
-        <button className="btn btn-primary" type="submit">
+        <button className="btn btn-primary btn-lg fw-bold" type="submit">
           {formStatus}
         </button>
       </form>

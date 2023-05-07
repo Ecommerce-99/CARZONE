@@ -200,11 +200,11 @@ const Main = () => {
         <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
 
-      <div className="container p-0" id="Gallery">
+      <div className="container  p-0" id="Gallery">
         <span id="cars"></span>
-        <div className="d-md-flex flex-md-equal w-100 mt-md-3 flex-wrap">
+        <div className="d-md-flex  flex-md-equal w-100 mt-md-3 flex-wrap">
           <div
-            className="col-12 col-lg-6   text-center overflow-hidden"
+            className="col-12 col-lg-6 text-center overflow-hidden"
             style={{ backgroundColor: "black" }}
           >
             <div className="my-3 py-3" id="div-sq">
@@ -224,7 +224,7 @@ const Main = () => {
               <h2 className="display-5 text-start fw-bold text-center my-5">
                 HYUNDAI
               </h2>
-              <p className="lead text-center mb-5 ">
+              <p className="lead text-center mb-3 ">
                 Hyundai Motor Company has served as the trailblazer of Korea’s
                 automobile Hyundai Motor Company has risen as a globally
                 recognized automobile manufacturer that exports its branded
@@ -252,7 +252,7 @@ const Main = () => {
           >
             <div className="my-3 p-3 mx-5">
               <h2 className="display-5  fw-bold text-center my-5">TOYOTA</h2>
-              <p className="lead text-center mb-5">
+              <p className="lead text-center mb-3">
                 Toyota Motor Corporation is a Japanese multinational automotive
                 manufacturer headquartered in Toyota City, Aichi, Japan. It was
                 founded by Kiichiro Toyoda and incorporated on August 28, 1937.
@@ -303,7 +303,7 @@ const Main = () => {
               <h2 className="display-5 text-start fw-bold 6 text-center my-5">
                 BMW
               </h2>
-              <p className="lead text-start text-center mb-5">
+              <p className="lead text-start text-center mb-3">
                 Bayerische Motoren Werke AG, abbreviated as BMW is a German
                 multinational manufacturer of luxury vehicles and motorcycles
                 headquartered in Munich, Bavaria, Germany.
@@ -324,7 +324,7 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="container bg-transparent mb-5" id="cont-cards">
+      <div className="container bg-white mb-5" id="cont-cards">
         <div className="row mb-3 text-center my-5">
           <h1 className="text-center my-5 fw-bold text-body display-4" id="top">
             TOP RATED
@@ -391,14 +391,14 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="container-fluid my-5 rounded-0 shadow-lg">
+      <div className="container my-5 rounded-3 shadow-lg" id="discount">
         <div
-          className="row p-4 pb-0 pe-lg-0 pt-lg-5 d-flex justify-content-center align-items-center rounded-3 border shadow"
-          id="discount"
+          className="row p-4 pb-0 pe-lg-0 pt-lg-5 d-flex justify-content-center align-items-center rounded-3  shadow"
+          
         >
-          <div className="col p-3 p-lg-5 pt-lg-3">
+          <div className="col p-3 p-lg-5 pt-lg-3 mt-5 ">
             <h1 className="display-4 fw-bold lh-1 text-center" id="dis-text">
-              Best Deal <span style={{ color: "#a51718" }}>Discount</span> Offer
+              Best Deal <span style={{ color: "#951718" }}>Discount</span> Offer
               on Cars : May 2023
             </h1>
             <p className="lead text-light fw-bold text-center">
@@ -407,7 +407,7 @@ const Main = () => {
             <div className="d-grid gap-2 d-md-flex justify-content-center mb-4 mb-lg-3">
               <Link to="discount">
                 <button
-                  className="btn btn-outline-light flex-shrink-0"
+                  className="btn btn-light fw-bold flex-shrink-0"
                   type="button"
                   fdprocessedid="qzga4"
                 >

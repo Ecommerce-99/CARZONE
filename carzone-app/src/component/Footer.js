@@ -8,7 +8,7 @@ const Footer = () => {
     <>
       <>
         {/* Footer */}
-        <footer className="text-center text-lg-start text-muted shadow-lg ">
+        <footer className="text-center text-lg-start text-muted shadow-lg bg-body">
           {/* Section: Social media */}
           <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             {/* Left */}

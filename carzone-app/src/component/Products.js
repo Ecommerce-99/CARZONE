@@ -3,8 +3,9 @@ import cars from "../Recordes.json";
 import { json } from "react-router-dom";
 import "./style.css";
 import { BrandContext } from "./brandContext";
+import { HashLink } from "react-router-hash-link";
 
-function Products({ brand }) {
+function Cart({ brand }) {
   const toyota = cars.toyota;
   const hyundai = cars.hyundai;
   const BMW = cars.bmw;
@@ -12,13 +13,9 @@ function Products({ brand }) {
   // const [carBrand, setCarBrand] = useState(brand);
     const [carBrand, setCarBrand] = useContext(BrandContext);
     console.log(carBrand);
+    const [Car, setCar] = useState();
+ 
 
-  let cart = [];
-
-  const addCart = (car) => {
-   
-    console.log(car)
-  };
 
   return (
     <>
@@ -32,7 +29,7 @@ function Products({ brand }) {
               }}>
               <div className="mask">
                 <div className="position-relative d-flex justify-content-center align-items-center h-100">
-                  <div className="text-white">
+                  <div className="text-light">
                     <h1 className="mb-3">LUXURY CARS GALLERY</h1>
                   </div>
                 </div>
@@ -41,7 +38,7 @@ function Products({ brand }) {
           </div>
 
 
-          <h1 className="my-5 display-3 fw-bold text-center">TOYOTA CARS</h1>
+          <h1 className="my-5 display-3 fw-bold text-center text-white">TOYOTA CARS</h1>
 
           {toyota.map((car) => {
             return (
@@ -87,7 +84,7 @@ function Products({ brand }) {
                         <span className="text-decoration-line-through">
                           $45.00
                         </span>
-                        <span>$40.00</span>
+                        <span> $40.00</span>
                       </div>
                       <p>
                         With a low center of gravity, it's designed to perform.
@@ -96,18 +93,19 @@ function Products({ brand }) {
                         all-around confident.
                       </p>
                       <div className="d-flex">
-                        <button
+                        <HashLink smooth to="/Cart/#">
+                          <button
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
                           onClick={() => {
-                            cart.push(car);
-                            localStorage.setItem("Cart", JSON.stringify(cart));
+                            localStorage.setItem("car", JSON.stringify(car));
                           }}
                         >
                           <i className="bi-cart-fill me-1" />
-                          Add to cart
+                          Buy
                         </button>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
@@ -116,7 +114,7 @@ function Products({ brand }) {
             );
           })}
 
-<h1 className="my-5 display-3 fw-bold text-center">HYUNDAI CARS</h1>
+<h1 className="my-5 display-3 fw-bold text-center text-white">HYUNDAI CARS</h1>
 
 {hyundai.map((car) => {
             return (
@@ -162,7 +160,7 @@ function Products({ brand }) {
                         <span className="text-decoration-line-through">
                           $45.00
                         </span>
-                        <span>$40.00</span>
+                        <span> $40.00</span>
                       </div>
                       <p>
                         With a low center of gravity, it's designed to perform.
@@ -171,18 +169,19 @@ function Products({ brand }) {
                         all-around confident.
                       </p>
                       <div className="d-flex">
-                        <button
+                        <HashLink smooth to="/Cart/#">
+                          <button
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
                           onClick={() => {
-                            cart.push(car);
-                            localStorage.setItem("Cart", JSON.stringify(cart));
+                            localStorage.setItem("car", JSON.stringify(car));
                           }}
                         >
                           <i className="bi-cart-fill me-1" />
-                          Add to cart
+                          Buy
                         </button>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
@@ -191,7 +190,7 @@ function Products({ brand }) {
             );
           })}
 
-<h1 className="my-5 display-3 fw-bold text-center">BMW CARS</h1>
+<h1 className="my-5 display-3 fw-bold text-center text-white">BMW CARS</h1>
 {BMW.map((car) => {
             return (
               <section className="py-2" key={car.id}>
@@ -236,7 +235,7 @@ function Products({ brand }) {
                         <span className="text-decoration-line-through">
                           $45.00
                         </span>
-                        <span>$40.00</span>
+                        <span> $40.00</span>
                       </div>
                       <p>
                         With a low center of gravity, it's designed to perform.
@@ -245,18 +244,19 @@ function Products({ brand }) {
                         all-around confident.
                       </p>
                       <div className="d-flex">
-                        <button
+                        <HashLink smooth to="/Cart/#">
+                          <button
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
                           onClick={() => {
-                            cart.push(car);
-                            localStorage.setItem("Cart", JSON.stringify(cart));
+                            localStorage.setItem("car", JSON.stringify(car));
                           }}
                         >
                           <i className="bi-cart-fill me-1" />
-                          Add to cart
+                          Buy
                         </button>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
@@ -293,7 +293,7 @@ function Products({ brand }) {
               <div className="mask">
                 <div className="position-relative d-flex justify-content-center align-items-center h-100">
                   <div className="text-white">
-                    <h1 className="mb-3">Toyota</h1>
+                    <h1 className="mb-3">TOYOTA</h1>
                   </div>
                 </div>
               </div>
@@ -344,7 +344,7 @@ function Products({ brand }) {
                         <span className="text-decoration-line-through">
                           $45.00
                         </span>
-                        <span>$40.00</span>
+                        <span> $40.00</span>
                       </div>
                       <p>
                         With a low center of gravity, it's designed to perform.
@@ -353,18 +353,19 @@ function Products({ brand }) {
                         all-around confident.
                       </p>
                       <div className="d-flex">
-                        <button
+                        <HashLink smooth to="/Cart/#">
+                          <button
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
                           onClick={() => {
-                            cart.push(car);
-                            localStorage.setItem("Cart", JSON.stringify(cart));
+                            localStorage.setItem("car", JSON.stringify(car));
                           }}
                         >
                           <i className="bi-cart-fill me-1" />
-                          Add to cart
+                          Buy
                         </button>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
@@ -440,7 +441,7 @@ function Products({ brand }) {
                         <span className="text-decoration-line-through">
                           $45.00
                         </span>
-                        <span>$40.00</span>
+                        <span> $40.00</span>
                       </div>
                       <p>
                         With a low center of gravity, it's designed to perform.
@@ -449,18 +450,19 @@ function Products({ brand }) {
                         all-around confident.
                       </p>
                       <div className="d-flex">
-                        <button
+                        <HashLink smooth to="/Cart/#">
+                          <button
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
                           onClick={() => {
-                            cart.push(car);
-                            localStorage.setItem("Cart", JSON.stringify(cart));
+                            localStorage.setItem("car", JSON.stringify(car));
                           }}
                         >
                           <i className="bi-cart-fill me-1" />
-                          Add to cart
+                          Buy
                         </button>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
@@ -541,7 +543,7 @@ function Products({ brand }) {
                         <span className="text-decoration-line-through">
                           $45.00
                         </span>
-                        <span>$40.00</span>
+                        <span> $40.00</span>
                       </div>
                       <p>
                         With a low center of gravity, it's designed to perform.
@@ -550,18 +552,19 @@ function Products({ brand }) {
                         all-around confident.
                       </p>
                       <div className="d-flex">
-                        <button
+                      <HashLink smooth to="/Cart/#">
+                          <button
                           className="btn btn-outline-dark flex-shrink-0"
                           type="button"
                           fdprocessedid="qzga4"
                           onClick={() => {
-                            cart.push(car);
-                            localStorage.setItem("Cart", JSON.stringify(cart));
+                            localStorage.setItem("car", JSON.stringify(car));
                           }}
                         >
                           <i className="bi-cart-fill me-1" />
-                          Add to cart
+                          Buy
                         </button>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
@@ -577,4 +580,4 @@ function Products({ brand }) {
   );
 }
 
-export default Products;
+export default Cart;

@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import {gapi} from 'gapi-script';
 import { AuthContext } from "./AuthContext";
+import Swal from "sweetalert2";
 
 
 
@@ -90,8 +91,13 @@ const SignUp = () => {
     users.push(userData);
     localStorage.setItem("users", JSON.stringify(users));
     console.log(userData);
+    const userName = userData.UserName;
     setAuth(true);
-    navigate('/')
+    Swal.fire({
+      title: '<strong> Welcome to Luxury Cars </strong>',
+   })
+    navigate('/');
+   
     SetEmail("");
     SetUserName("");
     SetTel("");
