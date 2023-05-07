@@ -1,22 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../Images/logo.png';
-import LocalMallIcon from '@mui/icons-material/LocalMall';
-import PersonIcon from '@mui/icons-material/Person';
-import { HashLink } from 'react-router-hash-link';
-import './home.css'
-
-
+import logo from "../Images/logo.png";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import PersonIcon from "@mui/icons-material/Person";
+import { HashLink } from "react-router-hash-link";
+import "./home.css";
 
 function Nav() {
   return (
-    <nav class="navbar navbar-expand-lg bg-white" id="nav-color">
-      <div class="container-fluid">
-        <Link to="/" class="navbar-brand">
-          <img src={logo} alt="logo" width={150} />
+    <nav className="navbar navbar-expand-lg bg-white p-0" id="nav-color">
+      <div className="container-fluid">
+        <Link to="/" className="navbar-brand">
+          <img src={logo} alt="logo" width={100} />
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -24,44 +22,39 @@ function Nav() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <Link
-                to="/"
-                class="nav-link fw-bold text-dark"
-                aria-current="page"
-              >
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link to="/" className="nav-link  text-dark" aria-current="page">
                 HOME
               </Link>
             </li>
-            <li class="nav-item">
-              <HashLink smooth to="/#Gallery" class="nav-link fw-bold text-dark">
-              GALLERY
+            <li className="nav-item">
+              <HashLink smooth to="/#Gallery" className="nav-link  text-dark">
+                GALLERY
               </HashLink>
             </li>
-            <li class="nav-item">
-              <Link to="About" class="nav-link fw-bold text-dark">
+            <li className="nav-item">
+              <Link to="About" className="nav-link  text-dark">
                 ABOUT
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="Contact" class="nav-link fw-bold text-dark">
+            <li className="nav-item">
+              <Link to="Contact" className="nav-link  text-dark">
                 CONTACT US
               </Link>
             </li>
           </ul>
-          <div class="d-flex">
-           
+          <div className="d-flex">
             <Link
               to="Cart"
-              className="btn text-dark me-1 fw-bold text-primary"
+              className="btn text-dark me-1 btn-white  text-primary bg-transparent"
             >
-              <LocalMallIcon color="primary" fontSize="large" />0
+              <LocalMallIcon color="black" fontSize="large" />
             </Link>
-            <Link to="Registration" class="btn btn-white fw-bold" type="submit">
+            <Link to="Registration" class="btn btn-white " type="submit">
               <PersonIcon fontSize="large" VerticalAlignCenter />{" "}
             </Link>
           </div>

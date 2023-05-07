@@ -1,8 +1,7 @@
 import React from "react";
 import logo from "../Images/logo.png";
 import { Link } from "react-router-dom";
-import './home.css'
-
+import "./home.css";
 
 const Footer = () => {
   return (
@@ -43,7 +42,7 @@ const Footer = () => {
           {/* Section: Social media */}
           {/* Section: Links  */}
           <section className="">
-            <div className="container text-center text-md-start mt-5">
+            <div className="container-fluid  bg-transparent text-center text-md-start mt-5">
               {/* Grid row */}
               <div className="row mt-3">
                 {/* Grid column */}
@@ -123,7 +122,7 @@ const Footer = () => {
                   </p>
                   <p>
                     <i className="fas fa-envelope me-3  text-dark" />
-                    carzone@gmail.com
+                    Luxurycars@gmail.com
                   </p>
                   <p>
                     <i className="fas fa-phone me-3  text-dark" /> + 962 077 567
@@ -143,8 +142,8 @@ const Footer = () => {
           {/* Copyright */}
           <div
             className="text-center p-4 "
-            style={{ backgroundColor: "#EEEEEE" }}
-          ></div>
+            style={{ backgroundColor: "transparent" }}
+          >ⓒ Copyright 2023 Luxury Cars. All rights reserved.</div>
           {/* Copyright */}
         </footer>
         {/* Footer */}

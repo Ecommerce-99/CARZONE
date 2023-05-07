@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useState, useContext } from "react";
 import video from "../Images/car.mp4";
 import car1 from "../Images/shopp.jpg";
 import car2 from "../Images/toyo.jpg";
@@ -13,11 +14,17 @@ import honda from "../Images/honda.jpg";
 import icon_1 from "../Images/price.png";
 import icon_2 from "../Images/min.png";
 import icon_3 from "../Images/shopcar.png";
+import { HashLink } from "react-router-hash-link";
 
 import { Link } from "react-router-dom";
-import './home.css'
+import "./home.css";
 
-const Main = ({ setBrand }) => {
+import { BrandContext } from "./brandContext";
+
+const Main = () => {
+  const [brand, setBrand] = useContext(BrandContext);
+  console.log(brand);
+
   return (
     <>
       {/* Carousel wrapper */}
@@ -55,22 +62,18 @@ const Main = ({ setBrand }) => {
             >
               <div className="d-flex justify-content-center align-items-center h-100">
                 <div className="text-white text-center">
-                  <h1 className="mb-3 fw-bold display-1" id="hero-1">
+                  <h2 className="mb-3 fw-bold display-5 " id="hero-1">
                     WELCOME TO{" "}
-                    <span className="text-primary" id="carzone">
-                      CAR-ZONE
+                    <span
+                      className="text-primary fw-bold display-2 "
+                      id="carzone"
+                    >
+                      Luxury Cars
                     </span>
-                  </h1>
-                  <h5 className="mb-4 display-6 fw-bold">
+                  </h2>
+                  <h5 className="mb-4  fw-bold">
                     Best &amp; Easy-To-Use Cars Sales Website
                   </h5>
-                  <Link
-                    to="registration"
-                    className="btn btn-light btn-lg m-2 fw-bold"
-                    role="button"
-                  >
-                    Join Us
-                  </Link>
                 </div>
               </div>
             </div>
@@ -89,20 +92,12 @@ const Main = ({ setBrand }) => {
             >
               <div className="d-flex justify-content-center align-items-center h-100">
                 <div className="text-white text-start">
-                  <h1 className="fw-bold display-1 " id="hero-2">
+                  <h1 className="fw-bold display-5 " id="hero-2">
                     START SHOPPING TODAY
                   </h1>
                   <h2 className="fw-normal" style={{ color: "#6AB7FE" }}>
                     SHOP YOUR FAVORITE BRAND
                   </h2>
-                  <Link
-                    to="gallery"
-                    className="btn  btn-lg m-2 fw-bold"
-                    role="button"
-                    id="g-btn"
-                  >
-                    Gallery
-                  </Link>
                 </div>
               </div>
             </div>
@@ -122,21 +117,13 @@ const Main = ({ setBrand }) => {
             >
               <div className="d-flex justify-content-center align-items-center h-100">
                 <div className="text-white text-center">
-                  <h2 className="display-1 fw-bold" id="hero-3">
+                  <h2 className="display-5 fw-bold" id="hero-3">
                     The World’s Leading Brands Trust <br />{" "}
                     <span className="text-primary" id="carzone">
-                      CAR-ZONE
+                      Luxury Cars
                     </span>{" "}
                     Every Day
                   </h2>
-                  <Link
-                    to="About"
-                    className="btn btn-light btn-lg m-2 fw-bold"
-                    href="#"
-                    role="button"
-                  >
-                    ABOUT
-                  </Link>
                 </div>
               </div>
             </div>
@@ -165,42 +152,42 @@ const Main = ({ setBrand }) => {
       </div>
       {/* Carousel wrapper */}
 
-      <div class="container-fulid rounded-5 shadow position-relative overflow-hidden my-5 mx-5 text-center">
-        <div class="col-md-5  mx-auto my-5">
-          <h1 class="display-4 fw-bold" id="top">
-            Why CAR-ZONE?
+      <div className="container-fulid rounded-5  my-5 mx-5 text-center p-0 ">
+        <div className="col-md-5  mx-auto my-5">
+          <h1 className="display-4 fw-bold" id="top">
+            Why Luxury Cars?
           </h1>
 
-          <div class="row mt-5">
-            <div class="col-lg-4">
+          <div className="row mt-5 gx-3 ">
+            <div className="col-lg-4 ">
               <img
-                class="bd-placeholder-img rounded-circle"
+                className="bd-placeholder-img rounded-circle"
                 src={icon_1}
                 alt="icon"
               />
-              <h2 class="fw-bold text-dark">Transparent pricing</h2>
+              <h2 className="fw-bold text-dark">Transparent pricing</h2>
               <p className="text-dark">
                 No surprises here. See how much you'll pay on cars you like.
               </p>
             </div>
-            <div class="col-lg-4">
+            <div className="col-lg-4">
               <img
-                class="bd-placeholder-img rounded-circle"
+                className="bd-placeholder-img rounded-circle"
                 src={icon_2}
                 alt="icon"
               />
-              <h2 class="fw-bold text-dark">Minutes, not hours</h2>
+              <h2 className="fw-bold text-dark">Minutes, not hours</h2>
               <p className="text-dark">
                 Time saving tools to help you find the right car in a snap.
               </p>
             </div>
-            <div class="col-lg-4">
+            <div className="col-lg-4">
               <img
-                class="bd-placeholder-img rounded-circle"
+                className="bd-placeholder-img rounded-circle"
                 src={icon_3}
                 alt="icon"
               />
-              <h2 class="fw-bold text-dark">Shop your way</h2>
+              <h2 className="fw-bold text-dark">Shop your way</h2>
               <p className="text-dark">
                 Your own pace, your own space. Shop online where and when it's
                 convenient for you.
@@ -208,13 +195,14 @@ const Main = ({ setBrand }) => {
             </div>
           </div>
         </div>
-        <div class="product-device shadow-sm d-none d-md-block"></div>
-        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        {/* /////////////// */}
+        <div className="product-device shadow-sm d-none d-md-block"></div>
+        <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
 
-      <div className="container" id="Gallery">
+      <div className="container p-0" id="Gallery">
         <span id="cars"></span>
-        <div className="d-md-flex flex-md-equal w-100 mt-md-3 ">
+        <div className="d-md-flex flex-md-equal w-100 mt-md-3 flex-wrap">
           <div
             className="col-12 col-lg-6   text-center overflow-hidden"
             style={{ backgroundColor: "black" }}
@@ -233,44 +221,53 @@ const Main = ({ setBrand }) => {
             id="grad"
           >
             <div className="my-3 p-3 mx-5">
-              <h2 className="display-5 text-start fw-bold">HYUNDAI</h2>
-              <p className="lead text-start">
-                Mercedes-Benz, commonly referred to as Mercedes and sometimes as
-                Benz, is a German luxury and commercial vehicle automotive brand
-                established in 1926.{" "}
+              <h2 className="display-5 text-start fw-bold text-center my-5">
+                HYUNDAI
+              </h2>
+              <p className="lead text-center mb-5 ">
+                Hyundai Motor Company has served as the trailblazer of Korea’s
+                automobile Hyundai Motor Company has risen as a globally
+                recognized automobile manufacturer that exports its branded
+                vehicles to over 200 countries..{" "}
               </p>
-              <Link to="Products">
+              <HashLink smooth to="/Products/#">
                 <button
-                  className="btn btn-lg btn-primary"
+                  className="btn btn-outline-dark flex-shrink-0"
+                  type="button"
+                  fdprocessedid="qzga4"
                   onClick={() => setBrand("hyundai")}
                 >
+                  <i className="bi-cart-fill me-1" />
                   Shop Now
                 </button>
-              </Link>
+              </HashLink>
             </div>
           </div>
         </div>
 
-        <div className="d-md-flex flex-md-equal w-100">
+        <div className="d-md-flex flex-md-equal w-100 flex-wrap">
           <div
             className="col-12 col-lg-6 text-center overflow-hidden"
             id="grad"
           >
             <div className="my-3 p-3 mx-5">
-              <h2 className="display-5 text-start fw-bold">TOYOTA</h2>
-              <p className="lead text-start">
+              <h2 className="display-5  fw-bold text-center my-5">TOYOTA</h2>
+              <p className="lead text-center mb-5">
                 Toyota Motor Corporation is a Japanese multinational automotive
                 manufacturer headquartered in Toyota City, Aichi, Japan. It was
                 founded by Kiichiro Toyoda and incorporated on August 28, 1937.
               </p>
-              <Link to="Products">
+              <HashLink smooth to="/Products/#">
                 <button
-                  className="btn btn-lg btn-primary"
+                  className="btn btn-outline-dark flex-shrink-0"
+                  type="button"
+                  fdprocessedid="qzga4"
                   onClick={() => setBrand("toyota")}
                 >
+                  <i className="bi-cart-fill me-1" />
                   Shop Now
                 </button>
-              </Link>
+              </HashLink>
             </div>
           </div>
 
@@ -289,7 +286,7 @@ const Main = ({ setBrand }) => {
           </div>
         </div>
 
-        <div className="d-md-flex flex-md-equal w-100 mb-5">
+        <div className="d-md-flex flex-md-equal w-100 mb-5 flex-wrap">
           <div
             className="col-12 col-lg-6 text-center overflow-hidden"
             style={{ backgroundColor: "black" }}
@@ -303,97 +300,89 @@ const Main = ({ setBrand }) => {
             id="grad"
           >
             <div className="my-3 p-3 mx-5">
-              <h2 className="display-5 text-start fw-bold">BMW</h2>
-              <p className="lead text-start">
+              <h2 className="display-5 text-start fw-bold 6 text-center my-5">
+                BMW
+              </h2>
+              <p className="lead text-start text-center mb-5">
                 Bayerische Motoren Werke AG, abbreviated as BMW is a German
                 multinational manufacturer of luxury vehicles and motorcycles
                 headquartered in Munich, Bavaria, Germany.
               </p>
-              <Link to="Products">
+              <HashLink to="/Products/#">
                 <button
-                  className="btn btn-lg btn-primary"
+                  className="btn btn-outline-dark flex-shrink-0"
+                  type="button"
+                  fdprocessedid="qzga4"
                   onClick={() => setBrand("bmw")}
                 >
+                  <i className="bi-cart-fill me-1" />
                   Shop Now
                 </button>
-              </Link>
+              </HashLink>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container shadow-lg rounded-5 mb-5" id="cont-cards">
-        <div class="row mb-3 text-center my-5">
+      <div className="container bg-transparent mb-5" id="cont-cards">
+        <div className="row mb-3 text-center my-5">
           <h1 className="text-center my-5 fw-bold text-body display-4" id="top">
             TOP RATED
           </h1>
 
-          <div class="col-lg-3 col-12 themed-grid-col">
-            <div
-              class="card shadow-sm mb-5 mx-3"
-              style={{ backgroundColor: "#f0f1f3" }}
-            >
-              <div class="card-body">
-                <p class="card-text text-start fs-3 fw-bold">Ford</p>
-                <p class="card-text text-start fs-5">3038 matches</p>
+          <div className="col-lg-3 col-12 themed-grid-col">
+            <div className="card  bg-transparent shadow-sm mb-5 mx-3">
+              <div className="card-body">
+                <p className="card-text text-start fs-3 fw-bold">Ford</p>
+                <p className="card-text text-start fs-5">3038 matches</p>
               </div>
               <img
                 src={ford}
-                class="bd-placeholder-img card-img-top"
-                width="100%"
-                height="100%"
-              ></img>
+                className="bd-placeholder-img card-img-top"
+                style={{ width: "100%", height: "100%" }}
+              />
             </div>
           </div>
 
-          <div class="col-lg-3 col-12 themed-grid-col">
-            <div
-              class="card shadow-sm mb-5 mx-3"
-              style={{ backgroundColor: "#f0f1f3" }}
-            >
-              <div class="card-body">
-                <p class="card-text text-start fs-3 fw-bold">Honda</p>
-                <p class="card-text text-start fs-5">2940 matches</p>
+          <div className="col-lg-3 col-12 themed-grid-col">
+            <div className="card bg-transparent shadow-sm mb-5 mx-3">
+              <div className="card-body">
+                <p className="card-text text-start fs-3 fw-bold">Honda</p>
+                <p className="card-text text-start fs-5">2940 matches</p>
               </div>
               <img
                 src={honda}
-                class="bd-placeholder-img card-img-top"
+                className="bd-placeholder-img card-img-top"
                 width="100%"
                 height="100%"
               ></img>
             </div>
           </div>
 
-          <div class="col-lg-3 col-12 themed-grid-col">
-            <div
-              class="card shadow-sm mb-5 mx-3"
-              style={{ backgroundColor: "#f0f1f3" }}
-            >
-              <div class="card-body">
-                <p class="card-text text-start fs-3 fw-bold">Nissan</p>
-                <p class="card-text text-start fs-5">3132 matches</p>
+          <div className="col-lg-3 col-12 themed-grid-col">
+            <div className="card bg-transparent shadow-sm mb-5 mx-3">
+              <div className="card-body">
+                <p className="card-text text-start fs-3 fw-bold">Nissan</p>
+                <p className="card-text text-start fs-5">3132 matches</p>
               </div>
               <img
                 src={nissan}
-                class="bd-placeholder-img card-img-top"
+                className="bd-placeholder-img card-img-top"
                 width="100%"
                 height="100%"
               ></img>
             </div>
           </div>
 
-          <div class="col-lg-3 col-12 themed-grid-col ">
-            <div
-              class="card shadow-sm mb-5 mx-3"
-              style={{ backgroundColor: "#f0f1f3" }}
-            >
-              <div class="card-body ">
-                <p class="card-text text-start fs-3 fw-bold">Ford</p>
-                <p class="card-text text-start fs-5">3038 matches</p>
+          <div className="col-lg-3 col-12 themed-grid-col ">
+            <div className="card bg-transparent shadow-sm mb-5 mx-3">
+              <div className="card-body ">
+                <p className="card-text text-start fs-3 fw-bold">Ford</p>
+                <p className="card-text text-start fs-5">3038 matches</p>
               </div>
               <img
                 src={ford2}
-                class="bd-placeholder-img card-img-top"
+                className="bd-placeholder-img card-img-top"
                 width="100%"
                 height="100%"
               ></img>
@@ -402,26 +391,28 @@ const Main = ({ setBrand }) => {
         </div>
       </div>
 
-      <div class="container my-5 rounded-5 shadow-lg">
+      <div className="container-fluid my-5 rounded-0 shadow-lg">
         <div
-          class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow"
+          className="row p-4 pb-0 pe-lg-0 pt-lg-5 d-flex justify-content-center align-items-center rounded-3 border shadow"
           id="discount"
         >
-          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h1 class="display-4 fw-bold lh-1 " id="dis-text">
+          <div className="col p-3 p-lg-5 pt-lg-3">
+            <h1 className="display-4 fw-bold lh-1 text-center" id="dis-text">
               Best Deal <span style={{ color: "#a51718" }}>Discount</span> Offer
               on Cars : May 2023
             </h1>
-            <p class="lead text-dark fw-bold">
+            <p className="lead text-light fw-bold text-center">
               Check Latest Discount Offers with Best Deals on New Cars
             </p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3 my-5">
+            <div className="d-grid gap-2 d-md-flex justify-content-center mb-4 mb-lg-3">
               <Link to="discount">
                 <button
+                  className="btn btn-outline-light flex-shrink-0"
                   type="button"
-                  class="btn btn-light btn-lg px-4 me-md-2 fw-bold mb-5"
+                  fdprocessedid="qzga4"
                 >
-                  View Deal
+                  <i className="bi-cart-fill me-1" />
+                  View Deals
                 </button>
               </Link>
             </div>
