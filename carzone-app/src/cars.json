@@ -1,0 +1,27 @@
+{
+    "mercedes": [ 
+                        ],
+    "toyota": [
+                {
+                "type": "Toyota Crown",
+                 "color": "red", 
+                 "price": 39950, 
+                 "rate": 3, 
+                 "img": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/3u5/36/1.png?fm=webp&&w=768&h=328&q=90",
+                 "decription": "Strong and lightweight, Toyota Crown’s alloy wheels improve both handling and acceleration, and play a pivotal role in its striking silhouette. On Platinum, 21-in. machine-finished 10-spoke alloy wheels with black accents accentuate Toyota Crown’s sporty design. For a sleek and sophisticated look, Limited’s Advanced Technology Package comes outfitted with 21-in. dark premium metallic wheels. And standard 19-in. alloy wheels elegantly complement this sedan’s dynamic style."},
+           
+           
+            {
+            "type": "Toyota Pruis", 
+            "color": "black", 
+            "price": 39950, 
+            "rate": 3,  
+            "img": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/202/36/1.png?fm=webp&&w=768&h=328&q=90",
+            "decription": "Strong and lightweight, Toyota Crown’s alloy wheels improve both handling and acceleration, and play a pivotal role in its striking silhouette. On Platinum, 21-in. machine-finished 10-spoke alloy wheels with black accents accentuate Toyota Crown’s sporty design. For a sleek and sophisticated look, Limited’s Advanced Technology Package comes outfitted with 21-in. dark premium metallic wheels. And standard 19-in. alloy wheels elegantly complement this sedan’s dynamic style."}
+    ],
+
+    "BMW":   [
+
+    ]
+
+}
