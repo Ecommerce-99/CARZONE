@@ -4,6 +4,7 @@ import logo from '../Images/logo.png';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import PersonIcon from '@mui/icons-material/Person';
 import { HashLink } from 'react-router-hash-link';
+import './home.css'
 
 
 
