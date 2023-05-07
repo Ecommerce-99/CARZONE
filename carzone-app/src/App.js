@@ -6,6 +6,7 @@ import Footer from "./component/Footer";
 import Main from "./component/Main";
 import Gallery from "./component/Gallery";
 import Registration from "./component/Registration";
+import SignUp from "./component/SignUp";
 import Cart from "./component/Cart";
 import About from "./component/About";
 import Contact from "./component/Contact"; 
@@ -54,6 +55,7 @@ function App() {
           <Route path="Products" index element={<Products brand={brand} />} />
           <Route path="Gallery" index element={<Gallery />} />
           <Route path="Registration" index element={<Registration />} />
+          <Route path="SignUp" index element={<SignUp />} />          
           <Route path="Cart" index element={<Cart />} />
           <Route path="Contact" index element={<Contact />} />
           <Route path="About" index element={<About />} />
