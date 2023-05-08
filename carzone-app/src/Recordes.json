@@ -8,8 +8,8 @@
       "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/19.png?fm=webp&&w=768&h=328&q=90",
       "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/toyotacrown/limited/4020/090/36/23.png?fm=webp&&w=768&h=328&q=90",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "10000.00",
+      "discountedPrice": "9500.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
@@ -20,8 +20,8 @@
       "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/19.png?fm=webp&&w=768&h=328&q=90",
       "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/prius/limitedawd/1268/089/36/24.png?fm=webp&&w=768&h=328&q=90",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "9500.00",
+      "discountedPrice": "9200.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
@@ -32,8 +32,8 @@
       "image3": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/3.png?fm=webp&&w=768&h=328&q=90",
       "image4": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2023/camry/le/2532/040/1.png?fm=webp&&w=768&h=328&q=90",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "12300.00",
+      "discountedPrice": "11300.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     }
   ],
@@ -46,8 +46,8 @@
       "image3": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_27.png",
       "image4": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/elantra-2020/lhd/ex/gls-17-alloy/cyber-grey/cyber-grey_21.png",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "14000.00",
+      "discountedPrice": "13500.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
@@ -58,8 +58,8 @@
       "image3": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_27.png",
       "image4": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/sonata-2019/lhd/ex/gls-18-alloy/white-cream/white-cream_21.png",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "18000.00",
+      "discountedPrice": "17500.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
@@ -70,8 +70,8 @@
       "image3": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_27.png",
       "image4": "https://www.hyundai.com/content/dam/hyundai/template_en/en/images/common/360vr/tucson-2021/lhd/ex/gls-19-alloy/white-cream/white-cream_21.png",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "8000.00",
+      "discountedPrice": "7500.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     }
   ],
@@ -84,8 +84,8 @@
       "image3": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/58fe-110008051/WBY53EJ04PCN21416/c4ac53448b73efef112c12a6c09781f5.jpg",
       "image4": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/c421-110008051/WBY53EJ04PCN21416/eea77a634c1644c245967eb4f5d491ed.jpg",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "12.500.00",
+      "discountedPrice": "11000.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
@@ -96,8 +96,8 @@
       "image3": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/76fa-110008051/3MW89FF03P8D04746/2f27030b1db612f7b72ebac37da3659e.jpg",
       "image4": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/76fa-110008051/3MW89FF03P8D04746/2f27030b1db612f7b72ebac37da3659e.jpg",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "12000.00",
+      "discountedPrice": "11500.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     },
     {
@@ -108,8 +108,8 @@
       "image3": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/6d69-110008051/WBS63AZ0XPCM63923/910d456441ff042f2b3704fb01f8b924.jpg",
       "image4": "https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/6d69-110008051/WBS63AZ0XPCM63923/910d456441ff042f2b3704fb01f8b924.jpg",
       "rate": 4,
-      "price": "$45.00",
-      "discountedPrice": "$40.00",
+      "price": "15000.00",
+      "discountedPrice": "14000.00",
       "description": "With a low center of gravity, it's designed to perform. Feel its nimble handling in every turn and stability during acceleration and braking—for a drive that’s all-around confident."
     }
   ]

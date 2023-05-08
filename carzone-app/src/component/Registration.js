@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { AuthContext } from "./AuthContext";
+import Swal from "sweetalert2";
 
 
 
@@ -27,6 +28,11 @@ const Registration = () => {
     console.log('Login Success', res.profileObj);
     setShowLoginButton(false);
     setShowLogoutButton(true);
+    Swal.fire({
+      title: '<strong> Welcome Back </strong>',
+   })
+    setAuth(true);
+    navigate('/');
   }
   
   const onFailureSuccess = (res) => {
@@ -34,7 +40,6 @@ const Registration = () => {
   }
 
   const onSignoutSuccess = () => {
-    alert("You have been signed out successfully");
     setShowLoginButton(true);
     setShowLogoutButton(false);
   }
