@@ -1,216 +1,37 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import cars from "../Recordes.json";
-import { json } from "react-router-dom";
 import "./style.css";
 import { BrandContext } from "./brandContext";
 import { HashLink } from "react-router-hash-link";
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
 
 function Products({ brand }) {
   const toyota = cars.toyota;
   const hyundai = cars.hyundai;
   const BMW = cars.bmw;
 
+  const [carBrand, setCarBrand] = useContext(BrandContext);
+  // console.log(carBrand);
 
+  const [carId, setCarId] = useState();
+  const [carImg, setCarImg] = useState();
+  let cars_array = [];
+  const [allCars, setAllCars] = useState();
 
-
-   const [carBrand, setCarBrand] = useContext(BrandContext);
-    // console.log(carBrand);
-
-    const [ carId, setCarId ] = useState();
-    const [ carImg, setCarImg ] = useState();
-    let cars_array = [];
-    const [allCars, setAllCars] = useState();
-
-    toyota.map((car) =>{
-      cars_array.push(car)
-  })
-    hyundai.map((car) =>{
-      cars_array.push(car)
-  })
-    BMW.map((car) =>{
-      cars_array.push(car)
-  })
-
-    
- 
-    
-  
-  
-
-    const [words, setWords] = useState();
-    const [selectedCars, setSelectedCars] = useState(cars_array);
-    console.log(selectedCars)
-    const onSearch = (event) => {
-
-        
-      const filteredCars =  cars_array.filter( (car) =>{
-           if(car.type.toLowerCase().includes(event.target.value) || car.type.includes(event.target.value)){
-               return car;
-           }
-       })
-       console.log(filteredCars)
-       setSelectedCars(filteredCars)
-    
-          }
+  toyota.map((car) => {
+    cars_array.push(car);
+  });
+  hyundai.map((car) => {
+    cars_array.push(car);
+  });
+  BMW.map((car) => {
+    cars_array.push(car);
+  });
 
   return (
     <>
- {carBrand === "all" ? (
-        <>
-          <div>
-            <div
-              className="bigCon p-5 text-center bg-image rounded-3"
-              style={{
-                backgroundImage: `url(https://dealerimages.dealereprocess.com/image/upload/2378751)`,
-              }}>
-              <div className="mask">
-                <div className="position-relative d-flex justify-content-center align-items-center h-100">
-                  <div className="text-white">
-                    <h1 className="mb-3">LUXURY CARS GALLERY</h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-<div className="d-flex m-5">
-<Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="dark" href="/">
-            <h5 className="text-dark">Home</h5>
-          </Link>
-          <Typography color="text.primary"> <h5 className="text-dark">Gallery</h5></Typography>
-        </Breadcrumbs>
-</div>
-   
-
-          <h1 className="my-5 display-3 fw-bold text-center text-dark">GALLERY</h1>
-    
-
-        <div class="row">
-
-            <div class="row height d-flex justify-content-center align-items-center">
-              <div class="col-md-6">
-                <div class="form">
-                <input className="form-control me-2" type="search" value={words} onChange={onSearch} placeholder="Search for Car.." aria-label="Search"/>
-                </div>  
-              </div>              
-            </div>            
-          </div>
-
-          {selectedCars?.map((car) => {
-           
-            return (
-              <section className="py-2" key={car.id}>
-                <div className="container p-5 px-lg-5 my-5">
-                  <div className="row gx-4 gx-lg-5 align-items-center">
-                    <div className="col-md-6">
-                      <div className="row-3">
-                        <img
-                          className="card-img-top "
-                          src={carId === car.id ? carImg : car.image1}
-                          alt="..."
-                        />
-                      </div>
-                      <div className="container d-flex">
-                        <div className="col-sm-4 mt-5 ">
-                          <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image2)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image2}
-                            alt="..."
-                          />
-                          </button>
-                        </div>
-                        <div className="col-sm-4 mt-5">
-                        <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image3)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image3}
-                            alt="..."
-                          />
-                           </button>
-                        </div>
-                        <div className="col-sm-4 mt-5">
-                        <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image4)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image4}
-                            alt="..."
-                          />
-                           </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="small mb-1">SKU: BST-498</div>
-                      <h1 className="display-5 fw-bolder">{car.type} </h1>
-                      <div className="fs-5 mb-5">
-                        <span className="text-decoration-line-through">
-                          $45.00
-                        </span>
-                        <span> $40.00</span>
-                      </div>
-                      <p>
-                        With a low center of gravity, it's designed to perform.
-                        Feel its nimble handling in every turn and stability
-                        during acceleration and braking—for a drive that’s
-                        all-around confident.
-                      </p>
-                      <div className="d-flex">
-                        <HashLink smooth to="/Cart/#">
-                          <button
-                          className="btn btn-outline-dark flex-shrink-0"
-                          type="button"
-                          fdprocessedid="qzga4"
-                          onClick={() => {
-                            localStorage.setItem("car", JSON.stringify(car));
-                          }}
-                        >
-                          <i className="bi-cart-fill me-1" />
-                          Buy
-                        </button>
-                        </HashLink>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            );
-          })}
-
-
-
-        </>
-      ) : (
-        <></>
-      )}
-
-
-
-
-
-
-
-
-
-
-
       {carBrand === "toyota" ? (
         <>
           <div>
@@ -231,148 +52,24 @@ function Products({ brand }) {
           </div>
 
           <div className="d-flex m-5">
-              <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="dark" href="/">
-            <h5 className="text-dark">Home</h5>
-          </Link>
-          <Link underline="hover" color="dark" href="/Products">
-            <h5 className="text-dark">Gallery</h5>
-          </Link>
-          <Typography color="text.primary"> <h5 className="text-dark">Toyota</h5></Typography>
-        </Breadcrumbs>
-        </div>
-
-          {toyota.map((car) => {
-           
-           return (
-             <section className="py-2" key={car.id}>
-               <div className="container px-4 px-lg-5 my-5">
-                 <div className="row gx-4 gx-lg-5 align-items-center">
-                   <div className="col-md-6">
-                     <div className="row-3">
-                       <img
-                         className="card-img-top "
-                         src={carId === car.id ? carImg : car.image1}
-                         alt="..."
-                       />
-                     </div>
-                     <div className="container d-flex">
-                       <div className="col-sm-4 mt-5 ">
-                         <button className="btn btn-white" onClick={() =>{
-                            setCarId(car.id)
-                            setCarImg(car.image2)
-                         }}>
-                         <img
-                           className="card-img-top mb-5 "
-                           src={car.image2}
-                           alt="..."
-                         />
-                         </button>
-                       </div>
-                       <div className="col-sm-4 mt-5">
-                       <button className="btn btn-white" onClick={() =>{
-                            setCarId(car.id)
-                            setCarImg(car.image3)
-                         }}>
-                         <img
-                           className="card-img-top mb-5 "
-                           src={car.image3}
-                           alt="..."
-                         />
-                          </button>
-                       </div>
-                       <div className="col-sm-4 mt-5">
-                       <button className="btn btn-white" onClick={() =>{
-                            setCarId(car.id)
-                            setCarImg(car.image4)
-                         }}>
-                         <img
-                           className="card-img-top mb-5 "
-                           src={car.image4}
-                           alt="..."
-                         />
-                          </button>
-                       </div>
-                     </div>
-                   </div>
-                   <div className="col-md-6">
-                     <div className="small mb-1">SKU: BST-498</div>
-                     <h1 className="display-5 fw-bolder">{car.type} </h1>
-                     <div className="fs-5 mb-5">
-                       <span className="text-decoration-line-through">
-                         $45.00
-                       </span>
-                       <span> $40.00</span>
-                     </div>
-                     <p>
-                       With a low center of gravity, it's designed to perform.
-                       Feel its nimble handling in every turn and stability
-                       during acceleration and braking—for a drive that’s
-                       all-around confident.
-                     </p>
-                     <div className="d-flex">
-                       <HashLink smooth to="/Cart/#">
-                         <button
-                         className="btn btn-outline-dark flex-shrink-0"
-                         type="button"
-                         fdprocessedid="qzga4"
-                         onClick={() => {
-                           localStorage.setItem("car", JSON.stringify(car));
-                         }}
-                       >
-                         <i className="bi-cart-fill me-1" />
-                         Buy
-                       </button>
-                       </HashLink>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </section>
-           );
-         })}
-        </>
-      ) : (
-        <></>
-      )}
-
-      {carBrand === "hyundai" ? (
-        <>
-          <div>
-            <div 
-              className="bigCon p-5 text-center bg-image rounded-3"
-              style={{
-                backgroundImage: `url(https://www.hdcarwallpapers.com/walls/hyundai_vision_t_concept_2019_4k_6-HD.jpg)`,
-              }}
-            >
-              <div className="mask">
-                <div className="position-relative d-flex justify-content-center align-items-center h-100">
-                  <div className="text-white">
-                    <h1 className="mb-3">HYUNDAI</h1>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link underline="hover" color="dark" href="/">
+                <h5 className="text-dark">Home</h5>
+              </Link>
+              <Link underline="hover" color="dark" href="/Products">
+                <h5 className="text-dark">Gallery</h5>
+              </Link>
+              <Typography color="text.primary">
+                {" "}
+                <h5 className="text-dark">Toyota</h5>
+              </Typography>
+            </Breadcrumbs>
           </div>
 
-
-          <div className="d-flex m-5">
-              <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="dark" href="/">
-            <h5 className="text-dark">Home</h5>
-          </Link>
-          <Link underline="hover" color="dark" href="/Products">
-            <h5 className="text-dark">Gallery</h5>
-          </Link>
-          <Typography color="text.primary"> <h5 className="text-dark">Hyundai</h5></Typography>
-        </Breadcrumbs>
-        </div>
-
-
-          {hyundai.map((car) => {
+          {toyota.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container px-4 px-lg-5 my-5 bg-light rounded-4">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
@@ -384,40 +81,49 @@ function Products({ brand }) {
                       </div>
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
-                          <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image2)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image2}
-                            alt="..."
-                          />
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image2);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image2}
+                              alt="..."
+                            />
                           </button>
                         </div>
                         <div className="col-sm-4 mt-5">
-                        <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image3)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image3}
-                            alt="..."
-                          />
-                           </button>
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image3);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image3}
+                              alt="..."
+                            />
+                          </button>
                         </div>
                         <div className="col-sm-4 mt-5">
-                        <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image4)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image4}
-                            alt="..."
-                          />
-                           </button>
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image4);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image4}
+                              alt="..."
+                            />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -439,16 +145,16 @@ function Products({ brand }) {
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button
-                          className="btn btn-outline-dark flex-shrink-0"
-                          type="button"
-                          fdprocessedid="qzga4"
-                          onClick={() => {
-                            localStorage.setItem("car", JSON.stringify(car));
-                          }}
-                        >
-                          <i className="bi-cart-fill me-1" />
-                          Buy
-                        </button>
+                            className="btn btn-outline-dark flex-shrink-0"
+                            type="button"
+                            fdprocessedid="qzga4"
+                            onClick={() => {
+                              localStorage.setItem("car", JSON.stringify(car));
+                            }}
+                          >
+                            <i className="bi-cart-fill me-1" />
+                            Buy
+                          </button>
                         </HashLink>
                       </div>
                     </div>
@@ -457,11 +163,142 @@ function Products({ brand }) {
               </section>
             );
           })}
+        </>
+      ) : (
+        <></>
+      )}
 
+      {carBrand === "hyundai" ? (
+        <>
+          <div>
+            <div
+              className="bigCon p-5 text-center bg-image rounded-3"
+              style={{
+                backgroundImage: `url(https://www.hdcarwallpapers.com/walls/hyundai_vision_t_concept_2019_4k_6-HD.jpg)`,
+              }}
+            >
+              <div className="mask">
+                <div className="position-relative d-flex justify-content-center align-items-center h-100">
+                  <div className="text-white">
+                    <h1 className="mb-3">HYUNDAI</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div className="d-flex m-5">
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link underline="hover" color="dark" href="/">
+                <h5 className="text-dark">Home</h5>
+              </Link>
+              <Link underline="hover" color="dark" href="/Products">
+                <h5 className="text-dark">Gallery</h5>
+              </Link>
+              <Typography color="text.primary">
+                {" "}
+                <h5 className="text-dark">Hyundai</h5>
+              </Typography>
+            </Breadcrumbs>
+          </div>
 
-
-          
+          {hyundai.map((car) => {
+            return (
+              <section className="py-2" key={car.id}>
+                <div className="container px-4 px-lg-5 my-5 bg-light rounded-4">
+                  <div className="row gx-4 gx-lg-5 align-items-center">
+                    <div className="col-md-6">
+                      <div className="row-3">
+                        <img
+                          className="card-img-top "
+                          src={carId === car.id ? carImg : car.image1}
+                          alt="..."
+                        />
+                      </div>
+                      <div className="container d-flex">
+                        <div className="col-sm-4 mt-5 ">
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image2);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image2}
+                              alt="..."
+                            />
+                          </button>
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image3);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image3}
+                              alt="..."
+                            />
+                          </button>
+                        </div>
+                        <div className="col-sm-4 mt-5">
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image4);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image4}
+                              alt="..."
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="small mb-1">SKU: BST-498</div>
+                      <h1 className="display-5 fw-bolder">{car.type} </h1>
+                      <div className="fs-5 mb-5">
+                        <span className="text-decoration-line-through">
+                          $45.00
+                        </span>
+                        <span> $40.00</span>
+                      </div>
+                      <p>
+                        With a low center of gravity, it's designed to perform.
+                        Feel its nimble handling in every turn and stability
+                        during acceleration and braking—for a drive that’s
+                        all-around confident.
+                      </p>
+                      <div className="d-flex">
+                        <HashLink smooth to="/Cart/#">
+                          <button
+                            className="btn btn-outline-dark flex-shrink-0"
+                            type="button"
+                            fdprocessedid="qzga4"
+                            onClick={() => {
+                              localStorage.setItem("car", JSON.stringify(car));
+                            }}
+                          >
+                            <i className="bi-cart-fill me-1" />
+                            Buy
+                          </button>
+                        </HashLink>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          })}
         </>
       ) : (
         <></>
@@ -485,23 +322,26 @@ function Products({ brand }) {
               </div>
             </div>
           </div>
-          
+
           <div className="d-flex m-5">
-              <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="dark" href="/">
-            <h5 className="text-dark">Home</h5>
-          </Link>
-          <Link underline="hover" color="dark" href="/Products">
-            <h5 className="text-dark">Gallery</h5>
-          </Link>
-          <Typography color="text.primary"> <h5 className="text-dark">BMW</h5></Typography>
-        </Breadcrumbs>
-        </div>
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link underline="hover" color="dark" href="/">
+                <h5 className="text-dark">Home</h5>
+              </Link>
+              <Link underline="hover" color="dark" href="/Products">
+                <h5 className="text-dark">Gallery</h5>
+              </Link>
+              <Typography color="text.primary">
+                {" "}
+                <h5 className="text-dark">BMW</h5>
+              </Typography>
+            </Breadcrumbs>
+          </div>
 
           {BMW.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container p-5 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5 bg-light rounded-4">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
@@ -513,40 +353,49 @@ function Products({ brand }) {
                       </div>
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
-                          <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image2)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image2}
-                            alt="..."
-                          />
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image2);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image2}
+                              alt="..."
+                            />
                           </button>
                         </div>
                         <div className="col-sm-4 mt-5">
-                        <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image3)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image3}
-                            alt="..."
-                          />
-                           </button>
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image3);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image3}
+                              alt="..."
+                            />
+                          </button>
                         </div>
                         <div className="col-sm-4 mt-5">
-                        <button className="btn btn-white" onClick={() =>{
-                             setCarId(car.id)
-                             setCarImg(car.image4)
-                          }}>
-                          <img
-                            className="card-img-top mb-5 "
-                            src={car.image4}
-                            alt="..."
-                          />
-                           </button>
+                          <button
+                            className="btn btn-white"
+                            onClick={() => {
+                              setCarId(car.id);
+                              setCarImg(car.image4);
+                            }}
+                          >
+                            <img
+                              className="card-img-top mb-5 "
+                              src={car.image4}
+                              alt="..."
+                            />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -568,16 +417,16 @@ function Products({ brand }) {
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button
-                          className="btn btn-outline-dark flex-shrink-0"
-                          type="button"
-                          fdprocessedid="qzga4"
-                          onClick={() => {
-                            localStorage.setItem("car", JSON.stringify(car));
-                          }}
-                        >
-                          <i className="bi-cart-fill me-1" />
-                          Buy
-                        </button>
+                            className="btn btn-outline-dark flex-shrink-0"
+                            type="button"
+                            fdprocessedid="qzga4"
+                            onClick={() => {
+                              localStorage.setItem("car", JSON.stringify(car));
+                            }}
+                          >
+                            <i className="bi-cart-fill me-1" />
+                            Buy
+                          </button>
                         </HashLink>
                       </div>
                     </div>

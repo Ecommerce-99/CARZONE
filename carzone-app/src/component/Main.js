@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import video from "../Images/car.mp4";
 import car1 from "../Images/shopp.jpg";
 import car2 from "../Images/toyo.jpg";

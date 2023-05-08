@@ -1,5 +1,4 @@
 .bigCon {
-  /* background-image: url(https://wallpaper.dog/large/20526644.jpg); */
   background-position-y: 10px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,8 +9,6 @@
 
 .mask {
   background-color: rgba(0, 0, 0, 0.6);
-  /* position: relative;
-  top: 185px; */
 }
 
 .card-img-top {

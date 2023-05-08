@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PersonIcon from "@mui/icons-material/Person";
-import { HashLink } from "react-router-hash-link";
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import "./home.css";
 import { AuthContext } from "./AuthContext";
 import Swal from "sweetalert2";
 
-
 function Nav() {
-  const { auth , setAuth} = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
 
   return (
     <nav className="navbar navbar-expand-lg bg-white p-0" id="nav-color">
@@ -38,7 +36,7 @@ function Nav() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link smooth to="/Products" className="nav-link  text-dark">
+              <Link smooth to="/Pagination" className="nav-link  text-dark">
                 GALLERY
               </Link>
             </li>
@@ -60,26 +58,29 @@ function Nav() {
             >
               <LocalMallIcon color="black" fontSize="large" />
             </Link>
-           {
-            auth ?      <>
-            <Link to="/" onClick={() => { setAuth(false);
-                Swal.fire({
-                  title: '<strong>You have successfully been logged out</strong>',
-                  text: 'Thank You!',
-               })
-               
-               }
-               } class="btn btn-white " type="submit">
-              <ExitToAppIcon fontSize="large" VerticalAlignCenter />       
-            </Link>
+            {auth ? (
+              <>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    setAuth(false);
+                    Swal.fire({
+                      title:
+                        "<strong>You have successfully been logged out</strong>",
+                      text: "Thank You!",
+                    });
+                  }}
+                  class="btn btn-white "
+                  type="submit"
+                >
+                  <ExitToAppIcon fontSize="large" VerticalAlignCenter />
+                </Link>
               </>
-             
-             :  
-             <Link to="Registration"  class="btn btn-white " type="submit">
-             <PersonIcon fontSize="large" VerticalAlignCenter />
-           </Link> 
-        
-           }
+            ) : (
+              <Link to="Registration" class="btn btn-white " type="submit">
+                <PersonIcon fontSize="large" VerticalAlignCenter />
+              </Link>
+            )}
           </div>
         </div>
       </div>

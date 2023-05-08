@@ -10,22 +10,17 @@ import SignUp from "./component/SignUp";
 import Cart from "./component/Cart";
 import About from "./component/About";
 import Contact from "./component/Contact";
-import React, { useState, createContext, useEffect } from "react";
-import Payment from "./component/Payment";
-import HeroCart from "./component/heroCart";
+import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrandProvider } from "./component/brandContext";
-import {AuthContextProvider} from "./component/AuthContext";
-
-export const CartContext = createContext([]);
+import { AuthContextProvider } from "./component/AuthContext";
+import MainPagitante from "./component/MainPaginate";
 
 function App() {
- 
   return (
     <>
       <BrowserRouter>
-      <AuthContextProvider>
-        <CartContext.Provider>
+        <AuthContextProvider>
           <BrandProvider>
             <Nav />
             <Routes>
@@ -37,10 +32,10 @@ function App() {
               <Route path="Cart" index element={<Cart />} />
               <Route path="Contact" index element={<Contact />} />
               <Route path="About" index element={<About />} />
+              <Route path="Pagination" index element={<MainPagitante />} />
             </Routes>
             <Footer />
           </BrandProvider>
-        </CartContext.Provider>
         </AuthContextProvider>
       </BrowserRouter>
     </>

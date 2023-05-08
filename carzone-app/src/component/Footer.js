@@ -143,7 +143,9 @@ const Footer = () => {
           <div
             className="text-center p-4 "
             style={{ backgroundColor: "transparent" }}
-          >ⓒ Copyright 2023 Luxury Cars. All rights reserved.</div>
+          >
+            ⓒ Copyright 2023 Luxury Cars. All rights reserved.
+          </div>
           {/* Copyright */}
         </footer>
         {/* Footer */}
