@@ -2,56 +2,56 @@ import React from "react";
 import "../component/About.css";
 import { useState } from "react";
 
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+
 function About() {
   const [leadMembers, setLeadMembers] = useState([
     {
-      name: "Parveen Anand",
-      role: "Lead Designer",
-      imgSrc:
-        "https://startbootstrap.github.io/startbootstrap-agency/assets/img/team/3.jpg",
+      name: "Fahmi Aldairi",
+      role: "Scurm Master",
+      imgSrc: 'https://cdn.discordapp.com/attachments/1103605090721472583/1105115652802478192/IMG_20230131_061654.jpg',
       extraContent:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur nequeab porro quasi culpa nulla rerum quis minus voluptatibus sed hic ad quo sint, libero commodi officia aliquam! Maxime.",
+        "Civil Engineering",
       showExtraContent: false,
     },
     {
-      name: "Parveen Anand",
-      role: "Lead Designer",
-      imgSrc:
-        "https://startbootstrap.github.io/startbootstrap-agency/assets/img/team/3.jpg",
+      name: "Ahmad Abughaush",
+      role: "Product Onwer",
+      imgSrc: 'https://cdn.discordapp.com/attachments/1103605039345434637/1105118471597076541/ahmad.jpg',
       extraContent:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur nequeab porro quasi culpa nulla rerum quis minus voluptatibus sed hic ad quo sint, libero commodi officia aliquam! Maxime.",
+        "Electrical Engineering",
       showExtraContent: false,
     },
   ]);
 
   const [teamMembers, setTeamMembers] = useState([
     {
-      name: "Parveen Anand",
-      role: "Lead Designer",
-      imgSrc:
-        "https://startbootstrap.github.io/startbootstrap-agency/assets/img/team/3.jpg",
+      name: "Amani Zyoud",
+      role: "Team Member",
+      imgSrc: 'https://media.discordapp.net/attachments/1088354284460056587/1105120255539429449/1675084461337.jpg?width=490&height=669',
       extraContent:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur nequeab porro quasi culpa nulla rerum quis minus voluptatibus sed hic ad quo sint, libero commodi officia aliquam! Maxime.",
+        "Computer Engineering",
       showExtraContent: false,
     },
 
     {
-      name: "Larry Parker",
-      role: "Lead Developer",
-      imgSrc:
-        "https://startbootstrap.github.io/startbootstrap-agency/assets/img/team/1.jpg",
+      name: "Razan Aboushi",
+      role: "Team Member",
+      imgSrc: 'https://cdn.discordapp.com/attachments/1080409954923593773/1105116319298375680/MyImage.jpg',
       extraContent:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur nequeab porro quasi culpa nulla rerum quis minus voluptatibus sed hic ad quo sint, libero commodi officia aliquam! Maxime.",
+        "Mangement Information System",
       showExtraContent: false,
     },
 
     {
-      name: "Parveen Anand",
-      role: "Lead Designer",
+      name: "Asma Rasheed",
+      role: "Team Member",
       imgSrc:
-        "https://startbootstrap.github.io/startbootstrap-agency/assets/img/team/3.jpg",
+        'https://media.discordapp.net/attachments/1087337773725401109/1105118741873831987/329367558_197682316280856_6511780600509055397_n.jpg?width=669&height=669',
       extraContent:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur nequeab porro quasi culpa nulla rerum quis minus voluptatibus sed hic ad quo sint, libero commodi officia aliquam! Maxime.",
+        "Physics",
       showExtraContent: false,
     },
   ]);
@@ -68,6 +68,15 @@ function About() {
 
   return (
     <div>
+      
+<div className="d-flex m-5">
+<Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="dark" href="/">
+            <h5 className="text-dark">Home</h5>
+          </Link>
+          <Typography color="text.primary"> <h5 className="text-dark">About us</h5></Typography>
+        </Breadcrumbs>
+</div>
       <div className="container mt-5 mb-5">
         <div className="text-center">
           <h2 className="section-heading text-uppercase mt-5 mb-5">

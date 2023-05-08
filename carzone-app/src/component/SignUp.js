@@ -13,7 +13,7 @@ import Swal from "sweetalert2";
 const SignUp = () => {
   const navigate = useNavigate('/');
   const { auth, setAuth } = useContext(AuthContext);
-  console.log(auth);
+  // console.log(auth);
 
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
@@ -37,7 +37,11 @@ const SignUp = () => {
     console.log('Login Success', res.profileObj);
     setShowLoginButton(false);
     setShowLogoutButton(true);
-    navigate('/');
+    Swal.fire({
+      title: '<strong> Welcome To Luxury Cars </strong>',
+   })
+   setAuth(true);
+   navigate('/');
 
 
   }

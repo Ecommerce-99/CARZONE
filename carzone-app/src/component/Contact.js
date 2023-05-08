@@ -1,6 +1,8 @@
 import React from 'react'
 import Swal from 'sweetalert2'
-
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 
 
 const Contact = () => {
@@ -27,8 +29,16 @@ Swal.fire({
   icon: 'success'
 })
   }
-  return (
-    <div className="container my-5 shadow-lg p-5">
+  return (<>
+      <div className="d-flex m-5 p-5">
+<Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="dark" href="/">
+            <h5 className="text-dark">Home</h5>
+          </Link>
+          <Typography color="text.primary"> <h5 className="text-dark">Contact Us</h5></Typography>
+        </Breadcrumbs>
+</div>
+    <div className="container my-5 shadow-lg">
       <h2 className="mb-3 fw-bold fs-1 text-center">CONTACT US</h2>
       <p class="text-start w-responsive fw-bold fs-3">Do you have any questions?</p>
       <p class="text-start w-responsive fw-bold mb-5 fs-6">Please do not hesitate to contact us directly. Our team will come back to you within
@@ -56,7 +66,7 @@ Swal.fire({
           {formStatus}
         </button>
       </form>
-    </div>
+    </div></>
   )
 }
 export default Contact

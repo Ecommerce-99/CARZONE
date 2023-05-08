@@ -1,103 +1,108 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./checkOutPayment.css";
-import { CartContext } from "../App";
 import Payment from "./Payment";
 import HeroCart from "./heroCart";
-
-function Cart() 
-{
-  const [cartItems, setCartItems] = useContext(CartContext);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+import { AuthContext } from "./AuthContext";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 
-  function handleRemoveItem(id)
-   {
-    const updatedCartItems = cartItems.filter((item) => item.id !== id);
-    setCartItems(updatedCartItems);
-  }
+function Cart() {
+
+  const [Car, setCar] = useState(JSON.parse(localStorage.getItem("car")) || undefined);
+
+  const { auth } = useContext(AuthContext)
 
 
-
-  // Calculate total price of all items in cart
-  const calculateTotalPrice = () => {
-    let total = 0;
-    cartItems.forEach((item) => {
-      total += item.price;
-    });
-    return total.toFixed(2);
+  function handleRemoveItem(id) {
+    localStorage.removeItem("car");
+    setCar({});
   };
 
 
-
-  // Update total price whenever cart items change
-  useEffect(() => {
-    setTotalPrice(calculateTotalPrice());
-    // Save cart items in local storage
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-
-  
-  // Load cart items from local storage when component mounts
-  useEffect(() => {
-    const savedCartItems = localStorage.getItem("cartItems");
-    if (savedCartItems) {
-      setCartItems(JSON.parse(savedCartItems));
-    }
-  }, []);
-
-  // Check if user is logged in
-  useEffect(() => {
-    // Replace this with your actual login check logic
-    const isLoggedIn = true;
-    setIsLoggedIn(isLoggedIn);
-  }, []);
-
-
   return (
+
     <>
-    <HeroCart/>
-    <div className="container mt-5 p-5">
-    <div className="row">
-      <div className="col-12">
-        <h4 className="text-center mb-5 fw-bold fs-1">{cartItems.length === 0 ? "Your cart is empty" : "YOUR CART"}</h4>
-      </div>
-      {cartItems.map((item) => (
-        <div key={item.id} className="col-md-6 col-lg-4 mb-4">
-          <div className="card h-100 cart-item-container">
-            <img src={item.img} alt={item.type} className="card-img-top" />
-            <div className="card-bodyCart">
-              <h5 className="card-title">{item.type}</h5>
-              <p className="card-text">Price: {item.price} JD</p>
+      <HeroCart />
+ 
+      {Car ?
+    
+      
+        <div className="container mt-5 mb-5">
+          <div className="row justify-content-center">
+            <div className="col-12">
+              <h4 className="text-center mb-5 fw-bold">Your selected car</h4>
             </div>
-            <div className="card-footer text-center">
-              <button className="btn btn-danger" onClick={() => handleRemoveItem(item.id)}>
-                Remove from Cart
-              </button>
+
+            <div key={Car.id} className="col-md-6 col-lg-4 mb-4 text-center">
+              <div className="card h-100 cart-item-container animate__animated animate__fadeIn">
+                <img src={Car.image1} alt={Car.image1} className="card-img-top mt-4" />
+                <div className="card-bodyCart">
+                  <h5 className="card-title">{Car.type}</h5>
+                  <p className="card-text text-center m-3">Price: {Car.price} JD</p>
+                </div>
+                <div className="card-footer text-center">
+                  <HashLink smooth to="/Products/#" >
+                    <button className="btn btn-danger" onClick={() => handleRemoveItem(Car.id)}>
+                      Remove Car
+                    </button>
+                  </HashLink>
+                </div>
+              </div>
             </div>
+
           </div>
+
+          <div className="mt-5 ms-4 h6 text-start">
+            <p className="fw-bold h5 mb-4">The Price of the car :</p>
+            <p className="fw-bold mb-2">Sub-total: {Number(Car.price)} JD</p>
+            <hr />
+            <p className="fw-bold mt-2 mb-2">Charge: 100 JD</p>
+            <hr />
+            <p className="fw-bold mt-2">Total: {Number(Car.price) + 100} JD</p>
+          </div>
+        </div> : <div class="notInCart">
+          <h3 className="card-title mb-3">Don't miss the opportunity to get your car!</h3>
+          <p children="card-text mb-5">Enjoy luxury and high performance with our distinctive cars, and enjoy traveling with confidence and comfort. What are you waiting for, <strong>shop now</strong> and get the car you deserve.</p>
+          <HashLink to="/Products/#" className="btn btn-dark text-center">Go back to shop</HashLink>
+
         </div>
-      ))}
-    </div>
-    {cartItems.length > 0 && (
-      <div className="mt-5 text-start">
-        <p className="fw-bold mb-2">Sub-Total: {totalPrice} JD</p>
-        <hr/>
-        <p className="fw-bold mt-2 mb-2">Charge: 100 JD</p>
-        <hr/>
-        <p className="fw-bold mt-2">Total: {(Number(totalPrice) + 100).toFixed(2)} JD</p>
-      </div>
-    )}
-   
-  </div>
-  {cartItems.length > 0 && isLoggedIn && (
-      <div>
-        <h5 className="mt-4 fw-bold text-center text-dark fs-1">Payment Information</h5>
-        <Payment />
-      </div>
-    )}
-  </>
+
+
+      }
+
+      {auth && Car && (
+        <div>
+          <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 className="section-title mt-5  text-center text-primary px-3 mb-2 fs-5 fs-md-6 fs-lg-7 fw-bold">Payment Information</h6>
+          </div>
+          <Payment />
+        </div>
+      )}
+
+
+
+
+    </>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   );
 }
 

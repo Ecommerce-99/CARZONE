@@ -20,32 +20,12 @@ import {AuthContextProvider} from "./component/AuthContext";
 export const CartContext = createContext([]);
 
 function App() {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      type: "Car Model 1",
-      price: 20000,
-      img: "https://carwow-uk-wp-3.imgix.net/18015-MC20BluInfinito-scaled-e1666008987698.jpg",
-    },
-    {
-      id: 2,
-      type: "Car Model 2",
-      price: 25000,
-      img: "https://www.topgear.com/sites/default/files/2022/07/6_0.jpg",
-    },
-  ]);
-  // const total = cartItems.reduce((sum, item) => sum + item.price, 0);
-
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-
+ 
   return (
     <>
       <BrowserRouter>
       <AuthContextProvider>
-        <CartContext.Provider value={[cartItems, setCartItems]}>
+        <CartContext.Provider>
           <BrandProvider>
             <Nav />
             <Routes>

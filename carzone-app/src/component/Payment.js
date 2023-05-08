@@ -28,6 +28,10 @@ function Payment()
     });
 
 
+    const [Car, setCar] = useState(JSON.parse(localStorage.getItem("car")) || undefined);
+
+
+
 
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -73,10 +77,10 @@ function Payment()
                     <div className="box-2">
                         <div className="box-inner-2">
                             <div>
-                                <p className="fw-bold mt-2">Payment Details</p>
+                                <p className="fw-bold h5 mb-2 mt-2">Payment Details</p>
                                 <p className="dis mb-3">Complete your purchase by providing your payment details</p>
                             </div>
-                            <form className="mt-3" id="AddressForm" onSubmit={handleFormSubmitAdress}>
+                            <form className="mt-3 ms-3 me-3" id="AddressForm" onSubmit={handleFormSubmitAdress}>
                                 <div className="mb-3">
                                     <p className="dis fw-bold mb-2">Full Name</p>
                                     <input className="form-control" type="text" placeholder="Your full name" name="fullName" onChange={handleInputChangeAddress} />
@@ -117,7 +121,7 @@ function Payment()
                                     </div>
 
                                 </div>
-                                <button className="btn btn-dark col-12" id="AdressButton" >Save</button>
+                                <button className="btn btn-dark text-white col-12" id="AdressButton"> <span> Save  </span></button>
 
                             </form>
                         </div>
@@ -159,12 +163,25 @@ function Payment()
                                         <button type="submit" className="btn btn-dark bg-dark mt-3 col-12" id="checkOutButton"  onClick={(e) => {
                                             if (formData.number && formData.name && formData.expiry && formData.cvc) {
                                                 Swal.fire({
-                                                    position: 'center',
-                                                    icon: 'success',
-                                                    title: 'Your payment has been completed successfully',
-                                                    showConfirmButton: false,
-                                                    timer: 3000
-                                                })
+                                                    title: 'Confirm your order',
+                                                    text: 'Are you sure you want to proceed with this payment?',
+                                                    icon: 'warning',
+                                                    showCancelButton: true,
+                                                    html:`Your order is a car type ${Car.type} and its price is ${Car.price} a charge of 100 JD will be added to it And you will pay a deposit of 500 JD`,
+                                                    confirmButtonText: 'Yes, proceed to payment',
+                                                    cancelButtonText: 'Cancel',
+                                                }).then((result) => {
+                                                    if (result.isConfirmed) {
+                                                        Swal.fire({
+                                                            position: 'center',
+                                                            icon: 'success',
+                                                            title: 'Your payment has been completed successfully',
+                                                            showConfirmButton: false,
+                                                            timer: 3000
+                                                        });
+                                                        // Add code to submit the payment form here
+                                                    }
+                                                });
                                             } else {
                                                 Swal.fire({
                                                     position: 'center',
@@ -172,7 +189,7 @@ function Payment()
                                                     title: 'Please fill in all the required fields',
                                                     showConfirmButton: false,
                                                     timer: 3000
-                                                })
+                                                });
                                             }
                                         }}>Pay Now</button>
 

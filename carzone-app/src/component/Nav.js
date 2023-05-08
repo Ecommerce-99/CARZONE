@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 
 
 function Nav() {
-  const { auth , setAuth} = useContext(AuthContext)
+  const { auth , setAuth} = useContext(AuthContext);
 
   return (
     <nav className="navbar navbar-expand-lg bg-white p-0" id="nav-color">
