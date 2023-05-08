@@ -108,7 +108,7 @@ function Products({ brand }) {
            
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
@@ -501,7 +501,7 @@ function Products({ brand }) {
           {BMW.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">

@@ -30,7 +30,7 @@ Swal.fire({
 })
   }
   return (<>
-      <div className="d-flex m-5">
+      <div className="d-flex m-5 p-5">
 <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="dark" href="/">
             <h5 className="text-dark">Home</h5>

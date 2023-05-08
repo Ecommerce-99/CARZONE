@@ -152,7 +152,7 @@ const Main = () => {
       </div>
       {/* Carousel wrapper */}
 
-      <div className="container-fulid rounded-5  my-5 mx-5 text-center p-0 ">
+      <div className="container-fulid rounded-5  my-5 mx-5 text-center p-lg-4 p-md-0 p-sm-0 ">
         <div className="col-md-5  mx-auto my-5">
           <h1 className="display-4 fw-bold" id="top">
             Why Luxury Cars?
@@ -334,7 +334,7 @@ const Main = () => {
             <div className="card  bg-transparent shadow-sm mb-5 mx-3">
               <div className="card-body">
                 <p className="card-text text-start fs-3 fw-bold">Ford</p>
-                <p className="card-text text-start fs-5">3038 matches</p>
+                
               </div>
               <img
                 src={ford}
@@ -348,7 +348,7 @@ const Main = () => {
             <div className="card bg-transparent shadow-sm mb-5 mx-3">
               <div className="card-body">
                 <p className="card-text text-start fs-3 fw-bold">Honda</p>
-                <p className="card-text text-start fs-5">2940 matches</p>
+                
               </div>
               <img
                 src={honda}
@@ -363,7 +363,7 @@ const Main = () => {
             <div className="card bg-transparent shadow-sm mb-5 mx-3">
               <div className="card-body">
                 <p className="card-text text-start fs-3 fw-bold">Nissan</p>
-                <p className="card-text text-start fs-5">3132 matches</p>
+                
               </div>
               <img
                 src={nissan}
@@ -378,7 +378,7 @@ const Main = () => {
             <div className="card bg-transparent shadow-sm mb-5 mx-3">
               <div className="card-body ">
                 <p className="card-text text-start fs-3 fw-bold">Ford</p>
-                <p className="card-text text-start fs-5">3038 matches</p>
+               
               </div>
               <img
                 src={ford2}
