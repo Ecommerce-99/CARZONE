@@ -58,7 +58,7 @@ function Cart()
   return (
     <>
     <HeroCart/>
-    <div className="container mt-5">
+    <div className="container mt-5 p-5">
     <div className="row">
       <div className="col-12">
         <h4 className="text-center mb-5 fw-bold fs-1">{cartItems.length === 0 ? "Your cart is empty" : "YOUR CART"}</h4>
@@ -93,7 +93,7 @@ function Cart()
   </div>
   {cartItems.length > 0 && isLoggedIn && (
       <div>
-        <h5 className="mt-4 fw-bold text-center text-white fs-1">Payment Information</h5>
+        <h5 className="mt-4 fw-bold text-center text-dark fs-1">Payment Information</h5>
         <Payment />
       </div>
     )}

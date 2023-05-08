@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
-import "../App.css";
 import backgroundImage from "../Images/SignInBG.png";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,6 +26,8 @@ const Registration = () => {
     console.log('Login Success', res.profileObj);
     setShowLoginButton(false);
     setShowLogoutButton(true);
+    navigate('/');
+
   }
   
   const onFailureSuccess = (res) => {
@@ -60,15 +61,13 @@ const Registration = () => {
   };
 
   return (
-    <div
-      className="background-image"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div className="container mt-5 mb-5">
+   
+      
+      <div className="container mt-5 mb-5" style={{ backgroundImage: `url(${backgroundImage})`}}>
         <div className="row justify-content-start">
           <div className="col-lg-4 col-md-6 col-sm-8">
             <Form
-              className="d-flex flex-column mt-5 mb-5"
+              className="d-flex flex-column mt-5 mb-5 mx-3"
               onSubmit={HandleSignIn} 
             >
               <h1 className=" Sign fw-bold text-center mb-5">Sign In</h1>
@@ -104,7 +103,7 @@ const Registration = () => {
               </Form.Group>
               <Button
                 className="mb-2"
-                style={{ backgroundColor: "#476072", fontSize: "1.2rem" }}
+                style={{ backgroundColor: "#363c76", fontSize: "1.2rem" }}
                 type="submit"
               >
                 LOGIN
@@ -138,7 +137,7 @@ const Registration = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

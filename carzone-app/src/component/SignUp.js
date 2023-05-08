@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
-import "../App.css";
 import backgroundImage from "../Images/SignUp.png";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,18 +26,18 @@ const SignUp = () => {
   useEffect(() => {
     
     gapi.load("client:auth2",()=>{
-      gapi.auth2.getAuthInstance({client_id:client_id})
+      gapi.auth2.getAuthInstance({clientId:clientId})
     },[])
   })
-  const client_id="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
+  const clientId="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
   const [showLoginButton, setShowLoginButton] = useState(true);
   const [showLogoutButton, setShowLogoutButton] = useState(false);
 
   const onLoginSuccess = (res) => {
-    alert('You have been signed in successfully')
     console.log('Login Success', res.profileObj);
     setShowLoginButton(false);
     setShowLogoutButton(true);
+    navigate('/');
 
 
   }
@@ -107,16 +106,13 @@ const SignUp = () => {
   };
 
   return (
-    <div
-      className="background-image"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div className="container mt-5 mb-5">
+   
+      <div className="container mt-5 mb-5" style={{ backgroundImage: `url(${backgroundImage}) `}}>
         <div className="row justify-content-end">
-          <div className="col-lg-4 col-md-6 col-sm-8">
-            <Form className="d-flex flex-column mt-5" onSubmit={handleSubmit}>
-              <h1 className=" Sign fw-bold text-center mb-5">Sign Up</h1>
-              <Form.Group className="mb-3">
+          <div className="col-lg-4 col-md-6 col-sm-8 mx-5">
+            <Form className="d-flex flex-column  mt-5" onSubmit={handleSubmit}>
+              <h1 className=" Sign fw-bold text-center mb-4">Sign Up</h1>
+              <Form.Group>
                 <Form.Control
                   type="email"
                   placeholder="Email Address"
@@ -130,7 +126,7 @@ const SignUp = () => {
                   onChange={(e) => SetEmail(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-3">
+              <Form.Group className="mb-2">
                 <Form.Control
                   type="text"
                   placeholder="User Name"
@@ -144,7 +140,7 @@ const SignUp = () => {
                   onChange={(e) => SetUserName(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-3">
+              <Form.Group className="mb-2">
                 <Form.Control
                   type="tel"
                   placeholder="Contact Number"
@@ -158,7 +154,7 @@ const SignUp = () => {
                   onChange={(e) => SetTel(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-3">
+              <Form.Group className="mb2">
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -172,9 +168,9 @@ const SignUp = () => {
                   onChange={(e) => SetPassword(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-4">
+              <Form.Group className="mb-2">
                 <Form.Control
-                  className="mb-2"
+                  className="mb-1"
                   type="password"
                   placeholder="Confirm Password"
                   style={{
@@ -188,8 +184,8 @@ const SignUp = () => {
                 />
               </Form.Group>
               <Button
-                className="mb-2"
-                style={{ backgroundColor: "#476072", fontSize: "1.2rem" }}
+                className="mb-1 mt-1"
+                style={{ backgroundColor: "#363c76", fontSize: "1.2rem" }}
                 type="submit"
               >
                 SIGN UP{" "}
@@ -201,13 +197,13 @@ const SignUp = () => {
                   Sign In
                 </Link>
               </p>
-              <Form.Text className="mb-3 mt-3 text-muted text-center">
+              <Form.Text className="mt-3 text-muted text-center">
                 Or
               </Form.Text>
               <div className="d-flex justify-content-center">
                 {showLoginButton ?
                 <GoogleLogin
-                  client_id="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
+                  clientId="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
                   buttonText="Login with google"
                   onSuccess={onLoginSuccess}
                   onFailure={onFailureSuccess}
@@ -215,7 +211,7 @@ const SignUp = () => {
                 /> : null }
                 {showLogoutButton ?
                 <GoogleLogout
-                  client_id="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
+                  clientId="67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com"
                   buttonText="Logout"
                   onLogoutSuccess={onSignoutSuccess}
                 ></GoogleLogout> : null }
@@ -225,7 +221,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 

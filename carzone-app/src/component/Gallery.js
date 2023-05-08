@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react';
+import carsData from '../cars.json';
+
 
 const Gallery = () => {
+  
+ 
   return (
-    <div>Gallery</div>
+  
+<></>
   )
 }
 

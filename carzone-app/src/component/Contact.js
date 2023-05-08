@@ -28,7 +28,7 @@ Swal.fire({
 })
   }
   return (
-    <div className="container my-5 shadow-lg">
+    <div className="container my-5 shadow-lg p-5">
       <h2 className="mb-3 fw-bold fs-1 text-center">CONTACT US</h2>
       <p class="text-start w-responsive fw-bold fs-3">Do you have any questions?</p>
       <p class="text-start w-responsive fw-bold mb-5 fs-6">Please do not hesitate to contact us directly. Our team will come back to you within

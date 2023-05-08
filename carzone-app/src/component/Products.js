@@ -38,17 +38,17 @@ function Cart({ brand }) {
           </div>
 
 
-          <h1 className="my-5 display-3 fw-bold text-center text-white">TOYOTA CARS</h1>
+          <h1 className="my-5 display-3 fw-bold text-center text-dark">TOYOTA CARS</h1>
 
           {toyota.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
                         <img
-                          className="card-img-top mb-md-0"
+                          className="card-img-top"
                           src={car.image1}
                           alt="..."
                         />
@@ -56,21 +56,21 @@ function Cart({ brand }) {
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image2}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image3}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image4}
                             alt="..."
                           />
@@ -114,17 +114,17 @@ function Cart({ brand }) {
             );
           })}
 
-<h1 className="my-5 display-3 fw-bold text-center text-white">HYUNDAI CARS</h1>
+<h1 className="my-5 display-3 fw-bold text-center text-dark">HYUNDAI CARS</h1>
 
 {hyundai.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
                         <img
-                          className="card-img-top mb-md-0"
+                          className="card-img-top"
                           src={car.image1}
                           alt="..."
                         />
@@ -132,21 +132,21 @@ function Cart({ brand }) {
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image2}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image3}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image4}
                             alt="..."
                           />
@@ -190,16 +190,16 @@ function Cart({ brand }) {
             );
           })}
 
-<h1 className="my-5 display-3 fw-bold text-center text-white">BMW CARS</h1>
+<h1 className="my-5 display-3 fw-bold text-center text-dark">BMW CARS</h1>
 {BMW.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
                         <img
-                          className="card-img-top mb-md-0"
+                          className="card-img-top"
                           src={car.image1}
                           alt="..."
                         />
@@ -207,21 +207,21 @@ function Cart({ brand }) {
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image2}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image3}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image4}
                             alt="..."
                           />
@@ -303,12 +303,12 @@ function Cart({ brand }) {
           {toyota.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
                         <img
-                          className="card-img-top mb-md-0"
+                          className="card-img-top"
                           src={car.image1}
                           alt="..."
                         />
@@ -316,21 +316,21 @@ function Cart({ brand }) {
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image2}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image3}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image4}
                             alt="..."
                           />
@@ -405,7 +405,7 @@ function Cart({ brand }) {
                     <div className="col-md-6">
                       <div className="row-3">
                         <img
-                          className="card-img-top mb-md-0"
+                          className="card-img-top"
                           src={car.image1}
                           alt="..."
                         />
@@ -413,21 +413,21 @@ function Cart({ brand }) {
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image2}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image3}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image4}
                             alt="..."
                           />
@@ -502,12 +502,12 @@ function Cart({ brand }) {
           {BMW.map((car) => {
             return (
               <section className="py-2" key={car.id}>
-                <div className="container px-4 px-lg-5 my-5">
+                <div className="container p-5 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
                       <div className="row-3">
                         <img
-                          className="card-img-top mb-md-0"
+                          className="card-img-top"
                           src={car.image1}
                           alt="..."
                         />
@@ -515,21 +515,21 @@ function Cart({ brand }) {
                       <div className="container d-flex">
                         <div className="col-sm-4 mt-5 ">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image2}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image3}
                             alt="..."
                           />
                         </div>
                         <div className="col-sm-4 mt-5">
                           <img
-                            className="card-img-top mb-5 mb-md-0"
+                            className="card-img-top mb-5"
                             src={car.image4}
                             alt="..."
                           />
