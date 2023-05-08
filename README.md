@@ -25,5 +25,3 @@
 ▷ [Wireframe & MockUp](https://www.figma.com/file/Hg5DjQexWoIT5AKUhuWM2v/E-Commerce-Cars?type=design&node-id=0%3A1&t=q6hN3BKb2YUR2EcL-1)
 
 ▷ [Trello](https://trello.com/b/UajPSgRm/e-commerce)
-
-▷ [organization link](https://github.com/Ecommerce-99/CARZONE)
