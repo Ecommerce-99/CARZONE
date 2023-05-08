@@ -6,10 +6,10 @@ import car2 from "../Images/toyo.jpg";
 import hyundai from "../Images/LogoHyundai.png";
 import toyota from "../Images/toyota.webp";
 import bmw from "../Images/bmw.png";
-import ford from "../Images/ford.jpg.png";
-import ford2 from "../Images/ford2.jpg";
-import nissan from "../Images/nissan.png";
-import honda from "../Images/honda.jpg";
+import ford from "../Images/bmw1.png";
+import ford2 from "../Images/2.jpg";
+import nissan from "../Images/3.jpg";
+import honda from "../Images/bmw2.png";
 
 import icon_1 from "../Images/price.png";
 import icon_2 from "../Images/min.png";
@@ -85,6 +85,7 @@ const Main = () => {
               src={car1}
               width="100%"
               alt="car-img"
+              style={{ objectFit: "Cover" }}
             />
             <div
               className="mask"
@@ -110,6 +111,7 @@ const Main = () => {
               width="100%"
               alt="car-img"
               id="car2"
+              style={{ objectFit: "Cover" }}
             />
             <div
               className="mask"
@@ -331,10 +333,14 @@ const Main = () => {
           </h1>
 
           <div className="col-lg-3 col-12 themed-grid-col">
-            <div className="card  bg-transparent shadow-sm mb-5 mx-3">
+            <div
+              className="card  bg-transparent shadow-sm mb-5 mx-3"
+              style={{ height: "15rem" }}
+            >
               <div className="card-body">
-                <p className="card-text text-start fs-3 fw-bold">Ford</p>
-                
+                <p className="card-text text-start fs-3 fw-bold text-center">
+                  BMW M235i
+                </p>
               </div>
               <img
                 src={ford}
@@ -345,10 +351,14 @@ const Main = () => {
           </div>
 
           <div className="col-lg-3 col-12 themed-grid-col">
-            <div className="card bg-transparent shadow-sm mb-5 mx-3">
+            <div
+              className="card bg-transparent shadow-sm mb-5 mx-3"
+              style={{ height: "15rem" }}
+            >
               <div className="card-body">
-                <p className="card-text text-start fs-3 fw-bold">Honda</p>
-                
+                <p className="card-text text-start fs-3 fw-bold text-center">
+                  BMW X4
+                </p>
               </div>
               <img
                 src={honda}
@@ -360,10 +370,14 @@ const Main = () => {
           </div>
 
           <div className="col-lg-3 col-12 themed-grid-col">
-            <div className="card bg-transparent shadow-sm mb-5 mx-3">
+            <div
+              className="card bg-transparent shadow-sm mb-5 mx-3"
+              style={{ height: "15rem" }}
+            >
               <div className="card-body">
-                <p className="card-text text-start fs-3 fw-bold">Nissan</p>
-                
+                <p className="card-text text-start fs-3 fw-bold text-center">
+                  Toyota crown
+                </p>
               </div>
               <img
                 src={nissan}
@@ -375,10 +389,14 @@ const Main = () => {
           </div>
 
           <div className="col-lg-3 col-12 themed-grid-col ">
-            <div className="card bg-transparent shadow-sm mb-5 mx-3">
+            <div
+              className="card bg-transparent shadow-sm mb-5 mx-3"
+              style={{ height: "15rem" }}
+            >
               <div className="card-body ">
-                <p className="card-text text-start fs-3 fw-bold">Ford</p>
-               
+                <p className="card-text text-start fs-3 fw-bold text-center">
+                  Toyota Prius
+                </p>
               </div>
               <img
                 src={ford2}
@@ -392,10 +410,7 @@ const Main = () => {
       </div>
 
       <div className="container my-5 rounded-3 shadow-lg" id="discount">
-        <div
-          className="row p-4 pb-0 pe-lg-0 pt-lg-5 d-flex justify-content-center align-items-center rounded-3  shadow"
-          
-        >
+        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 d-flex justify-content-center align-items-center rounded-3  shadow">
           <div className="col p-3 p-lg-5 pt-lg-3 mt-5 ">
             <h1 className="display-4 fw-bold lh-1 text-center" id="dis-text">
               Best Deal <span style={{ color: "#951718" }}>Discount</span> Offer
