@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-* {
-  font-family: "roboto";
-}
+/* * {
+  font-family: "arial";
+} */
 
 #introCarousel,
 .carousel-inner,
@@ -250,5 +250,39 @@
   .container-fulid .col-lg-4 {
     flex-basis: 100%;
     max-width: 100%;
+  }
+}
+.CatogeryCards {
+  padding: 1rem;
+  margin: 1rem 3rem;
+}
+
+@media (max-width: 768px) {
+  .Slide1 h2,
+  .Slide1 h5,
+  .Slide2 h1,
+  .Slide2 h2,
+  .Slide3 h1,
+  .Slide3 h2 {
+    font-size: 20px !important;
+  }
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    display: none !important;
+  }
+  .AboutCards {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .CatogeryCards {
+    margin: 1rem ;
+    padding: 0 ;
+  }
+  #discount h1,
+  #discount p{
+    font-size: 20px !important;
+  }
+  .discountBtn{
+    font-size: 14px !important;
   }
 }

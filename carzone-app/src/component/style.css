@@ -18,6 +18,12 @@
 .mask h1 {
   font-size: 80px;
 }
+
+@media(max-width:768px){
+  .mask h1{
+    font-size: 35px;
+  }
+}
 .Colorize {
   margin: 0 5px;
 }
@@ -72,3 +78,4 @@
 .Car-features li p {
   margin-left: 1rem;
 }
+

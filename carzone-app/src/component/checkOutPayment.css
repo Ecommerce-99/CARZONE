@@ -1,5 +1,4 @@
 /* Style of the payment page */
-
 .container-1 {
   width: 100%;
   margin: 0 auto;
@@ -80,7 +79,8 @@
 /* heroCart */
 .seoLanding {
   background-color: #f8f8f8;
-  padding: 50px 0;
+  /* padding: 50px 0; */
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -255,4 +255,9 @@
     opacity: 1;
     transform: none;
   }
+}
+
+.btn-primary {
+  background-color: #04173c;
+  font-size: 1.2rem;
 }

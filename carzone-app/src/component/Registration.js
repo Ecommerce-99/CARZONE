@@ -28,7 +28,9 @@ const Registration = () => {
       title: "<strong> Welcome Back </strong>",
     });
     setAuth(true);
-    navigate("/");
+    if (localStorage.getItem("car")) {
+      navigate("/Cart/#/");
+    } else navigate("/#");
   };
 
   const onFailureSuccess = (res) => {
@@ -47,9 +49,16 @@ const Registration = () => {
     const user = users.find(
       (u) => u.Email === Email && u.Password === Password
     );
-    if (user) {
+    if (user && localStorage.getItem("car")) {
       localStorage.setItem("currentUser", JSON.stringify(user));
-      navigate("/");
+      navigate("/Cart/#/");
+      setAuth(true);
+      setErrorMsg("");
+      setEmail("");
+      setPassword("");
+    } else if (user && !localStorage.getItem("car")) {
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      navigate("/#/");
       setAuth(true);
       setErrorMsg("");
       setEmail("");
@@ -106,6 +115,7 @@ const Registration = () => {
               className="mb-2"
               style={{ backgroundColor: "#363c76", fontSize: "1.2rem" }}
               type="submit"
+              onSubmit={HandleSignIn}
             >
               LOGIN
             </Button>

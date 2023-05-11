@@ -17,19 +17,6 @@ function Products({ brand }) {
 
   const [carId, setCarId] = useState();
   const [carImg, setCarImg] = useState();
-  let cars_array = [];
-  const [allCars, setAllCars] = useState();
-
-  toyota.map((car) => {
-    cars_array.push(car);
-  });
-  hyundai.map((car) => {
-    cars_array.push(car);
-  });
-  BMW.map((car) => {
-    cars_array.push(car);
-  });
-
   return (
     <>
       {carBrand === "toyota" ? (
@@ -131,17 +118,15 @@ function Products({ brand }) {
                       <div className="small mb-1">SKU: BST-498</div>
                       <h1 className="display-5 fw-bolder">{car.type} </h1>
                       <div className="fs-5 mb-5">
-                        <span className="text-decoration-line-through">
-                          $45.00
-                        </span>
-                        <span> $40.00</span>
+                        <p
+                          className="text-decoration-line-through"
+                          style={{ color: "#b0aaaa" }}
+                        >
+                          {car.price}
+                        </p>
+                        <h4>{car.discountedPrice}</h4>
                       </div>
-                      <p>
-                        With a low center of gravity, it's designed to perform.
-                        Feel its nimble handling in every turn and stability
-                        during acceleration and braking—for a drive that’s
-                        all-around confident.
-                      </p>
+                      <p>{car.description}</p>
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button
@@ -267,17 +252,15 @@ function Products({ brand }) {
                       <div className="small mb-1">SKU: BST-498</div>
                       <h1 className="display-5 fw-bolder">{car.type} </h1>
                       <div className="fs-5 mb-5">
-                        <span className="text-decoration-line-through">
-                          $45.00
-                        </span>
-                        <span> $40.00</span>
+                        <p
+                          className="text-decoration-line-through"
+                          style={{ color: "#b0aaaa" }}
+                        >
+                          {car.price}
+                        </p>
+                        <h4>{car.discountedPrice}</h4>
                       </div>
-                      <p>
-                        With a low center of gravity, it's designed to perform.
-                        Feel its nimble handling in every turn and stability
-                        during acceleration and braking—for a drive that’s
-                        all-around confident.
-                      </p>
+                      <p>{car.description}</p>
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button
@@ -403,17 +386,15 @@ function Products({ brand }) {
                       <div className="small mb-1">SKU: BST-498</div>
                       <h1 className="display-5 fw-bolder">{car.type} </h1>
                       <div className="fs-5 mb-5">
-                        <span className="text-decoration-line-through">
-                          $45.00
-                        </span>
-                        <span> $40.00</span>
+                        <p
+                          className="text-decoration-line-through"
+                          style={{ color: "#b0aaaa" }}
+                        >
+                          {car.price}
+                        </p>
+                        <h4>{car.discountedPrice}</h4>
                       </div>
-                      <p>
-                        With a low center of gravity, it's designed to perform.
-                        Feel its nimble handling in every turn and stability
-                        during acceleration and braking—for a drive that’s
-                        all-around confident.
-                      </p>
+                      <p>{car.description}</p>
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button

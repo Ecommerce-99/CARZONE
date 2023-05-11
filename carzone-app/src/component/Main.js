@@ -60,7 +60,7 @@ const Main = () => {
               className="mask"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
             >
-              <div className="d-flex justify-content-center align-items-center h-100">
+              <div className="Slide1 d-flex justify-content-center align-items-center h-100">
                 <div className="text-white text-center">
                   <h2 className="mb-3 fw-bold display-5 " id="hero-1">
                     WELCOME TO{" "}
@@ -91,7 +91,7 @@ const Main = () => {
               className="mask"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.43)" }}
             >
-              <div className="d-flex justify-content-center align-items-center h-100">
+              <div className="Slide2 d-flex justify-content-center align-items-center h-100">
                 <div className="text-white text-start">
                   <h1 className="fw-bold display-5 " id="hero-2">
                     START SHOPPING TODAY
@@ -99,6 +99,16 @@ const Main = () => {
                   <h2 className="fw-normal" style={{ color: "#6AB7FE" }}>
                     SHOP YOUR FAVORITE BRAND
                   </h2>
+                  <HashLink to="/Pagination/#">
+                    <button
+                      className="btn btn-light fw-bold flex-shrink-0 discountBtn"
+                      type="button"
+                      fdprocessedid="qzga4"
+                    >
+                      <i className="bi-cart-fill me-1" />
+                      View Deals
+                    </button>
+                  </HashLink> 
                 </div>
               </div>
             </div>
@@ -117,7 +127,7 @@ const Main = () => {
               className="mask"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.43)" }}
             >
-              <div className="d-flex justify-content-center align-items-center h-100">
+              <div className="Slide3 d-flex justify-content-center align-items-center h-100">
                 <div className="text-white text-center">
                   <h2 className="display-5 fw-bold" id="hero-3">
                     The World’s Leading Brands Trust <br />{" "}
@@ -148,17 +158,20 @@ const Main = () => {
           role="button"
           data-mdb-slide="next"
         >
-          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span
+            className="carousel carousel-control-next-icon"
+            aria-hidden="true"
+          />
           <span className="sr-only">Next</span>
         </a>
       </div>
       {/* Carousel wrapper */}
 
-      <div className="container-fulid rounded-5  my-5 mx-5 text-center p-lg-4 p-md-0 p-sm-0 ">
-        <div className="col-md-5  mx-auto my-5">
-          <h1 className="display-4 fw-bold" id="top">
+      <div className="AboutCards container-fulid rounded-5  my-5 mx-5 text-center p-lg-4 p-md-0 p-sm-0 ">
+        <div className="col-md-7  mx-auto my-7">
+          <h2 className="display-6 fw-bold" id="top">
             Why Luxury Cars?
-          </h1>
+          </h2>
 
           <div className="row mt-5 gx-3 ">
             <div className="col-lg-4 ">
@@ -222,7 +235,7 @@ const Main = () => {
             className="col-12 col-lg-6 text-center overflow-hidden"
             id="grad"
           >
-            <div className="my-3 p-3 mx-5">
+            <div className="CatogeryCards">
               <h2 className="display-5 text-start fw-bold text-center my-5">
                 HYUNDAI
               </h2>
@@ -252,7 +265,7 @@ const Main = () => {
             className="col-12 col-lg-6 text-center overflow-hidden"
             id="grad"
           >
-            <div className="my-3 p-3 mx-5">
+            <div className="CatogeryCards">
               <h2 className="display-5  fw-bold text-center my-5">TOYOTA</h2>
               <p className="lead text-center mb-3">
                 Toyota Motor Corporation is a Japanese multinational automotive
@@ -301,7 +314,7 @@ const Main = () => {
             className="col-12 col-lg-6 text-center overflow-hidden"
             id="grad"
           >
-            <div className="my-3 p-3 mx-5">
+            <div className="CatogeryCards">
               <h2 className="display-5 text-start fw-bold 6 text-center my-5">
                 BMW
               </h2>
@@ -328,9 +341,9 @@ const Main = () => {
 
       <div className="container bg-white mb-5" id="cont-cards">
         <div className="row mb-3 text-center my-5">
-          <h1 className="text-center my-5 fw-bold text-body display-4" id="top">
+          <h3 className="text-center my-5 fw-bold text-body display-6" id="top">
             TOP RATED
-          </h1>
+          </h3>
 
           <div className="col-lg-3 col-12 themed-grid-col">
             <div
@@ -422,7 +435,7 @@ const Main = () => {
             <div className="d-grid gap-2 d-md-flex justify-content-center mb-4 mb-lg-3">
               <Link to="discount">
                 <button
-                  className="btn btn-light fw-bold flex-shrink-0"
+                  className="btn btn-light fw-bold flex-shrink-0 discountBtn"
                   type="button"
                   fdprocessedid="qzga4"
                 >

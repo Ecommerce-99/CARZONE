@@ -43,7 +43,7 @@ const MainPagitante = () => {
 
   return (
     <div className="container mt-5">
-      <Gallery posts={currentPosts} loading={loading} />
+      <Gallery posts={currentPosts} allCars={cars_array} />
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={posts.length}

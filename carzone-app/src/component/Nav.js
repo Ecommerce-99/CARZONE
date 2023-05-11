@@ -7,16 +7,20 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import "./home.css";
 import { AuthContext } from "./AuthContext";
 import Swal from "sweetalert2";
+import { HashLink } from "react-router-hash-link";
 
 function Nav() {
   const { auth, setAuth } = useContext(AuthContext);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-white p-0" id="nav-color">
+    <nav
+      className="navbar navbar-expand-lg bg-white p-0 sticky-top"
+      id="nav-color"
+    >
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
+        <HashLink to="/#" className="navbar-brand">
           <img src={logo} alt="logo" width={100} />
-        </Link>
+        </HashLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -31,37 +35,45 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link  text-dark" aria-current="page">
+              <HashLink
+                to="/#"
+                className="nav-link  text-dark"
+                aria-current="page"
+              >
                 HOME
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <Link smooth to="/Pagination" className="nav-link  text-dark">
+              <HashLink
+                smooth
+                to="/Pagination/#"
+                className="nav-link  text-dark"
+              >
                 GALLERY
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <Link to="About" className="nav-link  text-dark">
+              <HashLink to="/About/#" className="nav-link  text-dark">
                 ABOUT
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <Link to="Contact" className="nav-link  text-dark">
+              <HashLink to="/Contact/#" className="nav-link  text-dark">
                 CONTACT US
-              </Link>
+              </HashLink>
             </li>
           </ul>
           <div className="d-flex">
-            <Link
-              to="Cart"
+            <HashLink
+              to="/Cart/"
               className="btn text-dark me-1 btn-white  text-primary bg-transparent"
             >
               <LocalMallIcon color="black" fontSize="large" />
-            </Link>
+            </HashLink>
             {auth ? (
               <>
-                <Link
-                  to="/"
+                <HashLink
+                  to="/#"
                   onClick={() => {
                     setAuth(false);
                     Swal.fire({
@@ -74,12 +86,16 @@ function Nav() {
                   type="submit"
                 >
                   <ExitToAppIcon fontSize="large" VerticalAlignCenter />
-                </Link>
+                </HashLink>
               </>
             ) : (
-              <Link to="Registration" class="btn btn-white " type="submit">
+              <HashLink
+                to="/Registration/#"
+                class="btn btn-white "
+                type="submit"
+              >
                 <PersonIcon fontSize="large" VerticalAlignCenter />
-              </Link>
+              </HashLink>
             )}
           </div>
         </div>
