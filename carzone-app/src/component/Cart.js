@@ -1,105 +1,146 @@
-import React, { useState, useContext, useEffect } from "react";
-import "./checkOutPayment.css";
-import { CartContext } from "../App";
+import React, { useState, useContext } from "react";
 import Payment from "./Payment";
 import HeroCart from "./heroCart";
+import { AuthContext } from "./AuthContext";
+import { HashLink } from "react-router-hash-link";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-function Cart() 
-{
-  const [cartItems, setCartItems] = useContext(CartContext);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-
-  function handleRemoveItem(id)
-   {
-    const updatedCartItems = cartItems.filter((item) => item.id !== id);
-    setCartItems(updatedCartItems);
+function Cart() {
+  function removeCarAndNavigate(carId, navigate) {
+    handleRemoveItem(carId);
+    navigate("/Pagination");
   }
 
+  const [Car, setCar] = useState(
+    JSON.parse(localStorage.getItem("car")) || undefined
+  );
 
+  const { auth } = useContext(AuthContext);
 
-  // Calculate total price of all items in cart
-  const calculateTotalPrice = () => {
-    let total = 0;
-    cartItems.forEach((item) => {
-      total += item.price;
-    });
-    return total.toFixed(2);
-  };
+  function handleRemoveItem(id) {
+    localStorage.removeItem("car");
+    setCar({});
+  }
 
-
-
-  // Update total price whenever cart items change
-  useEffect(() => {
-    setTotalPrice(calculateTotalPrice());
-    // Save cart items in local storage
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-
-  
-  // Load cart items from local storage when component mounts
-  useEffect(() => {
-    const savedCartItems = localStorage.getItem("cartItems");
-    if (savedCartItems) {
-      setCartItems(JSON.parse(savedCartItems));
-    }
-  }, []);
-
-  // Check if user is logged in
-  useEffect(() => {
-    // Replace this with your actual login check logic
-    const isLoggedIn = true;
-    setIsLoggedIn(isLoggedIn);
-  }, []);
-
+  const navigate = useNavigate();
 
   return (
     <>
-    <HeroCart/>
-    <div className="container mt-5">
-    <div className="row">
-      <div className="col-12">
-        <h4 className="text-center mb-5 fw-bold">{cartItems.length === 0 ? "Your cart is empty" : "Your cart"}</h4>
-      </div>
-      {cartItems.map((item) => (
-        <div key={item.id} className="col-md-6 col-lg-4 mb-4">
-          <div className="card h-100 cart-item-container">
-            <img src={item.img} alt={item.type} className="card-img-top" />
-            <div className="card-bodyCart">
-              <h5 className="card-title">{item.type}</h5>
-              <p className="card-text">Price: {item.price} JD</p>
+      <HeroCart />
+
+      {Car ? (
+        <div className="container mt-5 mb-5">
+          <div className="row justify-content-center">
+            <div className="col-12">
+              <h4 className="text-center mb-5 fw-bold">Your selected car</h4>
             </div>
-            <div className="card-footer text-center">
-              <button className="btn btn-danger" onClick={() => handleRemoveItem(item.id)}>
-                Remove from Cart
-              </button>
+
+            <div key={Car.id} className="col-md-6 col-lg-4 mb-4 text-center">
+              <div className="card h-100 cart-item-container animate__animated animate__fadeIn">
+                <img
+                  src={Car.image1}
+                  alt={Car.image1}
+                  className="card-img-top mt-4"
+                />
+
+                <div className="card-bodyCart">
+                  <h5 className="card-title mt-4">{Car.type}</h5>
+                  <p className="card-text text-center m-3">
+                    Price: {Number(Car.discountedPrice)} JD
+                  </p>
+                  <p className="card-text text-center mt-3 m-3">
+                    {Car.description}
+                  </p>
+                </div>
+                <div className="card-footer text-center">
+                  <div className="card-footer text-center">
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => {
+                        Swal.fire({
+                          title: "Are you sure?",
+                          text: "You are about to remove this car from your cart",
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#d33",
+                          cancelButtonColor: "#3085d6",
+                          confirmButtonText: "Yes, remove it!",
+                          cancelButtonText: "Cancel",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            removeCarAndNavigate(
+                              Car.id,
+                              navigate("/Pagination/#")
+                            );
+                          }
+                        });
+                      }}
+                    >
+                      Remove Car
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+          <div className="mt-5 ms-4 h6 text-start">
+            <p className="fw-bold h5 mb-4">The Price of the car :</p>
+            <p className="fw-bold mb-2">
+              Sub-total: {Number(Car.discountedPrice)} JD
+            </p>
+            <hr />
+            <p className="fw-bold mt-2 mb-2">Charge: 100 JD</p>
+            <hr />
+            <p className="fw-bold mt-2">
+              Total: {Number(Car.discountedPrice) + 100} JD
+            </p>
+          </div>
         </div>
-      ))}
-    </div>
-    {cartItems.length > 0 && (
-      <div className="mt-5 text-start">
-        <p className="fw-bold mb-2">Subtotal: {totalPrice} JD</p>
-        <hr/>
-        <p className="fw-bold mt-2 mb-2">Charge: 100 JD</p>
-        <hr/>
-        <p className="fw-bold mt-2">Total: {(Number(totalPrice) + 100).toFixed(2)} JD</p>
-      </div>
-    )}
-   
-  </div>
-  {cartItems.length > 0 && isLoggedIn && (
-      <div>
-        <h5 className="mt-4 fw-bold text-center">Payment information goes here</h5>
-        <Payment />
-      </div>
-    )}
-  </>
+      ) : (
+        <div class="notInCart">
+          <h3 className="card-title mb-3">
+            Don't miss the opportunity to get your car!
+          </h3>
+          <p children="card-text mb-5">
+            Enjoy luxury and high performance with our distinctive cars, and
+            enjoy traveling with confidence and comfort. What are you waiting
+            for, <strong>shop now</strong> and get the car you deserve.
+          </p>
+          <HashLink to="/Pagination/#" className="btn btn-dark text-center">
+            Go back to shop
+          </HashLink>
+        </div>
+      )}
+
+      {!auth && Car && (
+        <div
+          className="container text-center wow fadeInUp"
+          data-wow-delay="0.1s"
+        >
+          <p className="fs-5 fw-bold my-4">Please log in to continue</p>
+
+          <HashLink to="/Registration/#">
+            <button className="btn btn-primary btn-lg mb-5">
+              CheckOut Payment
+            </button>
+          </HashLink>
+        </div>
+      )}
+
+      {auth && Car && (
+        <div>
+          <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 className="section-title mt-5  text-center text-primary px-3 mb-2 fs-5 fs-md-6 fs-lg-7 fw-bold">
+              Payment Information
+            </h6>
+          </div>
+          <Payment />
+        </div>
+      )}
+    </>
   );
 }
-
 
 export default Cart;
